@@ -9,22 +9,11 @@ bomba::bomba()
         // Si hay un error salimos
         exit(5);
     }
-   //moldebomba.setSmooth(true);
     cuerpobomba.setTexture(moldebomba);
-
-       if(!MoldeBombaExplota.loadFromFile("imagen/explocion_1.png"))
-    {
-        // Si hay un error salimos
-        exit(5);
-    }
-   // moldebomba.setSmooth(true);
-    cuerpobomba.setTexture(mold);
-
-
-
 
     ///TIEMPO BOMBA
     tiempo1=reloj1.getElapsedTime();
+
 
     ///pj2
     tiempo2=reloj2.getElapsedTime();
@@ -36,31 +25,6 @@ void bomba::Aparecer(float x,float y )
     posX=x;
     posY=y;
     cuerpobomba.setPosition(posX,posY);
-}
-
-void bomba::Explota(){
-
-    explotar=true;
-
-
-
-    cuerpobomba.setPosition(posX,posY);
-   // system("pause");
-}
-
-void bomba::ExplotaFin(){
-
-     explotar=false;
-
-    if(!moldebomba.loadFromFile("imagen/bomba.png"))
-    {
-        // Si hay un error salimos
-        exit(8);
-    }
-
-    cuerpobomba.setTexture(moldebomba);
-
-
 }
 
 

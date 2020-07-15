@@ -15,16 +15,6 @@ protected:
     float posY;
     Texture moldebomba;
     Sprite cuerpobomba;
-
-    Texture MoldeBombaExplota;
-
-
-
-
-
-
-
-
     ///personaje1
     Clock reloj1;
     Time tiempo1;
@@ -36,40 +26,26 @@ protected:
     bool mostrar=false;
     bool mostrar2=false;
 
-
-    bool explotar=false;
-
-
 public:
     ///METODOS
     bomba();
     virtual ~bomba();
 
     ///DANIO
-    void hacerDanio(float,float,float*,float*);
+    bool hacerDanio();
     void AreaDelDanio( );
 
     ///APARECER BOMBA
     void Aparecer(float,float);
     void despawn();
 
-
-    /// EXPLOTAR
-    void Explota();
-    void ExplotaFin();
-
-
-
     ///GETS
     Sprite getSpriteBomba(){return cuerpobomba;}
-
     float getTiempo1();
     bool getmostrar(){return mostrar;}
     bool getmostrar2(){return mostrar2;}
     float getTiempo2();
     int getDanio(){return danio;}
-
-    bool getExplotar(){return explotar;}
 
 
     ///SETS
@@ -78,8 +54,6 @@ public:
     void setDanio(int d){danio=d;}
     void setmostrar(bool mos){mostrar=mos;}
     void setmostrar2(bool mos){mostrar2=mos;}
-    void setPosiciones(float*,float*);
-
 
 
 

@@ -10,8 +10,10 @@ private:
     float posY;
     Texture moldeCubo;
     Sprite cuerpoCubo;
-    float vecX[13]={0};
-    float vecY[8]={0};
+    float vecX[13]={0}; //NO SE USA?
+    float vecY[8]={0};  //NO SE USA?
+
+
 
 public: ///METODOS
 
@@ -29,6 +31,8 @@ public: ///METODOS
     void setPos(float x , float y);
     float getPosX(){return posX;}
     float getPosY(){return posY;}
+
+
 
 };
 

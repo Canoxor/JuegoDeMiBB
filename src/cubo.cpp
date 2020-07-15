@@ -27,7 +27,7 @@ cubo::cubo(float x, float y)
     //ctor
 }
 
-void cubo::setPos(float x , float y)
+void cubo::setPos(float x , float y) //ES LO QUE USA COMO ""CONSTRUCTOR""
 {
     posX=x;
     posY=y;
@@ -38,6 +38,8 @@ void cubo::setPos(float x , float y)
     }
     cuerpoCubo.setTexture(moldeCubo);
     cuerpoCubo.setPosition(x, y);
+
+
 }
 
 
@@ -47,7 +49,7 @@ cubo::~cubo()
 }
 
 
-float cubo::cargarPosX(){
+float cubo::cargarPosX(){   //NO SE USA?
 
 for(int x=0;x<13;x++){
 
@@ -55,8 +57,7 @@ for(int x=0;x<13;x++){
 }
 }
 
-float cubo::cargarPosY(){
-
+float cubo::cargarPosY(){   //NO SE USA?
 for(int x=0;x<8;x++){
 
     vecY[0]+=72;
