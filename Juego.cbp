@@ -45,7 +45,9 @@
 		<Linker>
 			<Add directory="SFML/lib" />
 		</Linker>
+		<Unit filename="Collision.cpp" />
 		<Unit filename="headers/CargarPosiciones.h" />
+		<Unit filename="headers/Collision.hpp" />
 		<Unit filename="headers/Juego.h" />
 		<Unit filename="include/Jugador.h" />
 		<Unit filename="include/bomba.h" />

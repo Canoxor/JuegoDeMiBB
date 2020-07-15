@@ -13,8 +13,6 @@ private:
     float vecX[13]={0}; //NO SE USA?
     float vecY[8]={0};  //NO SE USA?
 
-
-
 public: ///METODOS
 
     cubo();
@@ -31,9 +29,6 @@ public: ///METODOS
     void setPos(float x , float y);
     float getPosX(){return posX;}
     float getPosY(){return posY;}
-
-
-
 };
 
 

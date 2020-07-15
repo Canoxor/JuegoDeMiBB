@@ -2,53 +2,34 @@
 using namespace sf;
 #include "bomba.h"
 
-bomba::bomba()
+bomba::bomba(Texture &Bomba, Texture &Explosion_1)
 {
-    if(!moldebomba.loadFromFile("imagen/bomba.png"))
-    {
-        // Si hay un error salimos
-        exit(5);
-    }
-    cuerpobomba.setTexture(moldebomba);
+    BombaNormal.setTexture(Bomba);
+
+    BombaExplotando_lvl_1.setTexture(Explosion_1);
 
     ///TIEMPO BOMBA
-    tiempo1=reloj1.getElapsedTime();
-
-
-    ///pj2
-    tiempo2=reloj2.getElapsedTime();
-
+    tiempo=reloj.getElapsedTime();
 }
 
 void bomba::Aparecer(float x,float y )
 {
     posX=x;
     posY=y;
-    cuerpobomba.setPosition(posX,posY);
+    BombaNormal.setPosition(posX,posY);
 }
 
 
 ///TIEMPO
-float bomba::getTiempo1()
+float bomba::getTiempo()
 {
-    tiempo1= reloj1.getElapsedTime();
-    return tiempo1.asSeconds();
+    tiempo= reloj.getElapsedTime();
+    return tiempo.asSeconds();
 }
 
-float bomba::getTiempo2()
+void bomba::setTiempo()
 {
-    tiempo2= reloj2.getElapsedTime();
-    return tiempo2.asSeconds();
-}
-
-void bomba::setTiempo2()
-{
-    reloj2.restart();
-}
-
-void bomba::setTiempo1()
-{
-    reloj1.restart();
+    reloj.restart();
 }
 
 bomba::~bomba()

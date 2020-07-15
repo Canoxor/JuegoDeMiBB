@@ -18,7 +18,7 @@ Jugador::Jugador(float x, float y, int a)
     posX=x;
     posY=y;
 
-    if(!molde.loadFromFile("imagen/lobito.png"))
+    if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
     {
         // Si hay un error salimos
         exit(1);
@@ -46,7 +46,7 @@ void Jugador::setPos(float x, float y)
     posX=x;
     posY=y;
 
-    if(!molde.loadFromFile("imagen/lobito.png"))
+    if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
     {
         // Si hay un error salimos
         exit(1);

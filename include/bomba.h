@@ -13,51 +13,79 @@ protected:
     int danio=1;
     float posX;
     float posY;
-    Texture moldebomba;
-    Sprite cuerpobomba;
-    ///personaje1
-    Clock reloj1;
-    Time tiempo1;
+    Sprite BombaNormal, BombaExplotando_lvl_1;
+    Clock reloj;
+    Time tiempo;
 
-    ///personaje 2
-    Clock reloj2;
-    Time tiempo2;
+    int Estado=0; /// (0 = Normal) - (1 = Explotando lvl 1) - (2 = Explotando lvl 2) - (3 = Explotando lvl 3)
 
     bool mostrar=false;
-    bool mostrar2=false;
 
 public:
     ///METODOS
-    bomba();
+    bomba(Texture&,Texture&);
     virtual ~bomba();
 
     ///DANIO
     bool hacerDanio();
-    void AreaDelDanio( );
+    void AreaDelDanio();
 
     ///APARECER BOMBA
     void Aparecer(float,float);
     void despawn();
 
     ///GETS
-    Sprite getSpriteBomba(){return cuerpobomba;}
-    float getTiempo1();
-    bool getmostrar(){return mostrar;}
-    bool getmostrar2(){return mostrar2;}
-    float getTiempo2();
-    int getDanio(){return danio;}
+    int getEstado()
+    {
+        return Estado;
+    }
 
+    Sprite getSpriteBomba()
+    {
+        switch(Estado)
+        {
+        case 0:
+            return BombaNormal;
+            break;
+        case 1:
+            return BombaExplotando_lvl_1;
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        }
+    }
+
+    float getTiempo();
+
+    bool getmostrar()
+    {
+        return mostrar;
+    }
+
+    int getDanio()
+    {
+        return danio;
+    }
 
     ///SETS
-    void setTiempo1();
-    void setTiempo2();
-    void setDanio(int d){danio=d;}
-    void setmostrar(bool mos){mostrar=mos;}
-    void setmostrar2(bool mos){mostrar2=mos;}
+    void setEstado(int Numero)
+    {
+        Estado = Numero;
+    }
 
+    void setTiempo();
 
+    void setDanio(int d)
+    {
+        danio=d;
+    }
 
-
+    void setmostrar(bool mos)
+    {
+        mostrar=mos;
+    }
 };
 
 #endif // BOMBA_H

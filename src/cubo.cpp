@@ -14,7 +14,7 @@ cubo::cubo(float x, float y)
     posX=x;
     posY=y;
 
-    if(!moldeCubo.loadFromFile("imagen/cubo.png"))
+    if(!moldeCubo.loadFromFile("imagen/Cubos/cubo.png"))
     {
         // Si hay un error salimos
         exit(6);
@@ -31,7 +31,7 @@ void cubo::setPos(float x , float y) //ES LO QUE USA COMO ""CONSTRUCTOR""
 {
     posX=x;
     posY=y;
-     if(!moldeCubo.loadFromFile("imagen/cubo.png"))
+     if(!moldeCubo.loadFromFile("imagen/Cubos/cubo.png"))
     {
         // Si hay un error salimos
         exit(6);
