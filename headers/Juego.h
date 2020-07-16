@@ -10,6 +10,10 @@ void FuncionJuego()
 
     RenderWindow window(VideoMode(1260, 660), "DESTROY_IT");
 
+    Clock relojfps;
+    Time tiempo;
+
+    int fps=60;
 
     Texture mapita;
 
@@ -22,10 +26,13 @@ void FuncionJuego()
     Sprite mapa;
     mapa.setTexture(mapita);
 
-    ///POSICIONES DEL CENTRO
-    float VecX[13]= {0};
-    float VecY[9]= {0};
-    CargarPosiciones(VecX,VecY);
+
+
+
+
+  ///JUGADORES /////////////////////////////////////////////////////////////////
+
+
 
     ///JUGADOR1
     Jugador Jugador_1(60, 60, 1);
@@ -34,6 +41,17 @@ void FuncionJuego()
     Jugador Jugador_2(780, 540, 0);
     /// VECTOR JUGADORES
     int SpawnBombas[2][2]= {0};
+
+
+
+
+
+
+
+    ///POSICIONES DEL CENTRO BOMBAS
+    float VecX[13]= {0};
+    float VecY[9]= {0};
+    CargarPosiciones(VecX,VecY);
 
     /// Sprites para las bombas
     Texture Bomba_Roja_T, Bomba_Azul_T;
@@ -57,7 +75,6 @@ void FuncionJuego()
         ///Si hay un error salimos
         exit(1);
     }
-
 
     /// ///BOMBA
     bomba Bomba_J1(Bomba_Roja_T,Explosion_1_T);
@@ -93,6 +110,10 @@ void FuncionJuego()
 
     while (window.isOpen())
     {
+        tiempo=relojfps.getElapsedTime();//objetenmos tiempo transcurrido
+
+        if(tiempo.asSeconds()>1/fps)///comparamos si el tiempo transcurrido supera 1 fps de ser así, ejecutamos un instante
+        {
         Event event;
         while (window.pollEvent(event))
         {
@@ -504,8 +525,11 @@ void FuncionJuego()
             window.draw(Jugador_1.getSprite());
             window.draw(Jugador_2.getSprite());
             window.display();
-        }
 
+
+             relojfps.restart();///reincio el reloj
+        }
+    }
 
     }
 

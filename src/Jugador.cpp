@@ -1,15 +1,8 @@
 
 #include <SFML/Graphics.hpp>
-
-
+using namespace std;
 using namespace sf;
-
 #include "Jugador.h"
-
-Jugador::Jugador(){
-
-}
-
 
 
 Jugador::Jugador(float x, float y, int a)
@@ -18,7 +11,7 @@ Jugador::Jugador(float x, float y, int a)
     posX=x;
     posY=y;
 
-    if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
+    if(!molde.loadFromFile("imagen/Personajes/personaje1.png"))
     {
         // Si hay un error salimos
         exit(1);
@@ -26,6 +19,7 @@ Jugador::Jugador(float x, float y, int a)
 
     cuerpo.setTexture(molde);
     cuerpo.setScale(1, 1);
+
     if(a==0)
     {
         ///cuerpo.setColor(Color(255, 0, 0));
@@ -45,7 +39,7 @@ void Jugador::setPos(float x, float y)
 
     posX=x;
     posY=y;
-
+/*
     if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
     {
         // Si hay un error salimos
@@ -54,7 +48,7 @@ void Jugador::setPos(float x, float y)
 
     cuerpo.setTexture(molde);
     cuerpo.setPosition(x, y);
-
+/*/
 }
 
 void Jugador::moverDerecha(float x, float y, float v)

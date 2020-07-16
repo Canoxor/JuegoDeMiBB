@@ -9,7 +9,7 @@ using namespace sf;
 
 class Jugador
 {
-     private:
+
 
     protected:
 
@@ -23,9 +23,8 @@ class Jugador
         Sprite cuerpo;
 
 
-
     public: ///METODOS
-        Jugador();
+
         Jugador(float a, float b, int c);
 
         virtual ~Jugador();
