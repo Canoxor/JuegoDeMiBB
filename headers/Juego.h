@@ -83,6 +83,28 @@ void FuncionJuego()
         }
     }
 
+    ///CUBO R
+
+     xc=60;
+     yc=60;
+    cuboR vcuboR[9][13];
+
+    for(y=1; y<10; y++){
+        for(x=1; x<14; x++){
+
+                 vcuboR[y-1][x-1].setPos((float)xc*x, (float) yc*y);
+                 vcuboR[y-1][x-1].setEstado(true);
+        }
+    }
+                vcuboR[0][0].setPos(120, 120);  ///estos se setean aparte para que no le ocupen el spawn
+                vcuboR[0][1].setPos(120, 120);
+                vcuboR[1][0].setPos(120, 120);
+                ///
+                vcuboR[8][12].setPos(240, 240);
+                vcuboR[7][12].setPos(240, 240);
+                vcuboR[8][11].setPos(240, 240);
+
+
     ///fin dibujo cubos
 
     float variable;
@@ -172,9 +194,7 @@ void FuncionJuego()
         }
         if(Bomba_J1.getTiempo()>=2)
         {
-
-            Bomba_J1.setEstado(1);
-
+        Bomba_J1.setEstado(1);
         }
         if(Bomba_J1.getTiempo()>=4)
         {
@@ -314,6 +334,55 @@ void FuncionJuego()
 
             */
 
+
+///=////////////////////////////////////////////////////// ROMPIBLES /////////////////////////////////////////////////////////////////////////
+
+
+ for( y=0; y<9; y++){
+            for( x=0; x<13; x++){
+
+            if(vcuboR[y][x].getEstado()==true){
+
+                if(Collision::PixelPerfectTest(Jugador_1.getSprite(), vcuboR[y][x].getSprite())){
+
+                            switch(Jugador_1.getDirX()){
+
+                            case 1:
+                                Jugador_1.setX(Jugador_1.getSprite().getPosition().x-1);
+                                Jugador_1.setY(Jugador_1.getSprite().getPosition().y);
+                    //            cout<< "colision" <<endl;
+                                break;
+
+                            case -1:
+                                Jugador_1.setX(Jugador_1.getSprite().getPosition().x+1);
+                                Jugador_1.setY(Jugador_1.getSprite().getPosition().y);
+                  //              cout<< "colision" <<endl;
+                                break;
+                            }
+
+                            switch(Jugador_1.getDirY()){
+
+                            case 1:
+                                Jugador_1.setX(Jugador_1.getSprite().getPosition().x);
+                                Jugador_1.setY(Jugador_1.getSprite().getPosition().y-1);
+                //                cout<< "colision" <<endl;
+                                break;
+
+                            case -1:
+                                Jugador_1.setX(Jugador_1.getSprite().getPosition().x);
+                                Jugador_1.setY(Jugador_1.getSprite().getPosition().y+1);
+              //                  cout<< "colision" <<endl;
+                                break;
+                            }
+
+            }
+        //else{
+          //      cout<< "No colision"<< endl;
+            //}
+
+            }
+        }
+ }
 
 
 
@@ -456,6 +525,57 @@ void FuncionJuego()
             }
 
 
+            ///=////////////////////////////////////////////////////// ROMPIBLES /////////////////////////////////////////////////////////////////////////
+
+
+ for( y=0; y<9; y++){
+            for( x=0; x<13; x++){
+
+            if(vcuboR[y][x].getEstado()==true){
+
+                if(Collision::PixelPerfectTest(Jugador_2.getSprite(), vcuboR[y][x].getSprite())){
+
+                            switch(Jugador_2.getDirX()){
+
+                            case 1:
+                                Jugador_2.setX(Jugador_2.getSprite().getPosition().x-1);
+                                Jugador_2.setY(Jugador_2.getSprite().getPosition().y);
+                    //            cout<< "colision" <<endl;
+                                break;
+
+                            case -1:
+                                Jugador_2.setX(Jugador_2.getSprite().getPosition().x+1);
+                                Jugador_2.setY(Jugador_2.getSprite().getPosition().y);
+                  //              cout<< "colision" <<endl;
+                                break;
+                            }
+
+                            switch(Jugador_2.getDirY()){
+
+                            case 1:
+                                Jugador_2.setX(Jugador_2.getSprite().getPosition().x);
+                                Jugador_2.setY(Jugador_2.getSprite().getPosition().y-1);
+                //                cout<< "colision" <<endl;
+                                break;
+
+                            case -1:
+                                Jugador_2.setX(Jugador_2.getSprite().getPosition().x);
+                                Jugador_2.setY(Jugador_2.getSprite().getPosition().y+1);
+              //                  cout<< "colision" <<endl;
+                                break;
+                            }
+
+            }
+        //else{
+          //      cout<< "No colision"<< endl;
+            //}
+
+            }
+        }
+ }
+
+
+
 /// /////////////////////////////////// PROBANDO COSAS /////////////////////////////////////////////////////////////////////////////////////////////
 
             ///INTENTO DE COLISIONES
@@ -486,6 +606,15 @@ void FuncionJuego()
             ///Dibuja
 
             window.draw(mapa);
+
+            ///dibuja los rompibles
+            for( y=1; y<10; y++){
+            for( x=1; x<14; x++){
+            window.draw(vcuboR[y-1][x-1].getSprite());
+            }
+            }
+
+
             if(Bomba_J2.getmostrar()==true)
             {
                 window.draw(Bomba_J2.getSpriteBomba());

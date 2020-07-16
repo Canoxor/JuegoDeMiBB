@@ -52,11 +52,13 @@
 		<Unit filename="include/Jugador.h" />
 		<Unit filename="include/bomba.h" />
 		<Unit filename="include/cubo.h" />
+		<Unit filename="include/cuboR.h" />
 		<Unit filename="include/item.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Jugador.cpp" />
 		<Unit filename="src/bomba.cpp" />
 		<Unit filename="src/cubo.cpp" />
+		<Unit filename="src/cuboR.cpp" />
 		<Unit filename="src/item.cpp" />
 		<Extensions>
 			<code_completion />

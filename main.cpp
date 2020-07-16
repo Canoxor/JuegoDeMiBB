@@ -9,6 +9,7 @@ using namespace sf;
 
 #include "headers/CargarPosiciones.h"
 #include "cubo.h"
+#include "cuboR.h"
 #include "bomba.h"
 #include "Jugador.h"
 #include "headers/Juego.h"

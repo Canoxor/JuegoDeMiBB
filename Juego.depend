@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1594835230 source:c:\users\user\desktop\tp final lab\juego\main.cpp
+1594919484 source:c:\users\user\desktop\tp final lab\juego\main.cpp
 	<SFML/Graphics.hpp>
 	<iostream>
 	"headers/Collision.hpp"
 	"headers/CargarPosiciones.h"
 	"cubo.h"
+	"cuboR.h"
 	"bomba.h"
 	"Jugador.h"
 	"headers/Juego.h"
@@ -418,12 +419,13 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1594795601 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\main.cpp
+1594882222 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\main.cpp
 	<SFML/Graphics.hpp>
 	<iostream>
 	"headers/Collision.hpp"
 	"headers/CargarPosiciones.h"
 	"cubo.h"
+	"cuboR.h"
 	"bomba.h"
 	"Jugador.h"
 	"headers/Juego.h"
@@ -837,19 +839,19 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1594797344 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\jugador.h
+1594880347 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\jugador.h
 	<SFML/Graphics.hpp>
 	"bomba.h"
 
-1594797344 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\jugador.cpp
+1594880347 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\jugador.cpp
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
-1594797344 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\cubo.cpp
+1594882681 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\cubo.cpp
 	"cubo.h"
 	<SFML/Graphics.hpp>
 
-1594797344 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\cubo.h
+1594880347 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\cubo.h
 	<SFML/Graphics.hpp>
 
 1592338723 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\item.cpp
@@ -857,15 +859,15 @@
 
 1592338818 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\item.h
 
-1594835230 c:\users\user\desktop\tp final lab\juego\include\jugador.h
+1594859924 c:\users\user\desktop\tp final lab\juego\include\jugador.h
 	<SFML/Graphics.hpp>
 	"bomba.h"
 
-1594835230 source:c:\users\user\desktop\tp final lab\juego\src\cubo.cpp
+1594846004 source:c:\users\user\desktop\tp final lab\juego\src\cubo.cpp
 	"cubo.h"
 	<SFML/Graphics.hpp>
 
-1594835230 c:\users\user\desktop\tp final lab\juego\include\cubo.h
+1594846004 c:\users\user\desktop\tp final lab\juego\include\cubo.h
 	<SFML/Graphics.hpp>
 
 1592339004 source:c:\users\user\desktop\tp final lab\juego\src\item.cpp
@@ -873,22 +875,22 @@
 
 1592339003 c:\users\user\desktop\tp final lab\juego\include\item.h
 
-1594835230 source:c:\users\user\desktop\tp final lab\juego\src\jugador.cpp
+1594874410 source:c:\users\user\desktop\tp final lab\juego\src\jugador.cpp
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
-1594750222 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\bomba.cpp
+1594880347 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\bomba.cpp
 	<SFML/Graphics.hpp>
 	"bomba.h"
 
-1594750222 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\bomba.h
+1594880347 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\bomba.h
 	<SFML/Graphics.hpp>
 
-1594835208 source:c:\users\user\desktop\tp final lab\juego\src\bomba.cpp
+1594846004 source:c:\users\user\desktop\tp final lab\juego\src\bomba.cpp
 	<SFML/Graphics.hpp>
 	"bomba.h"
 
-1594835208 c:\users\user\desktop\tp final lab\juego\include\bomba.h
+1594846004 c:\users\user\desktop\tp final lab\juego\include\bomba.h
 	<SFML/Graphics.hpp>
 
 1592626574 c:\users\user\desktop\tp final lab\juego\include\mapa.h
@@ -900,7 +902,7 @@
 
 1594687160 c:\users\user\desktop\tp final lab\juego\headers\cargarposiciones.h
 
-1594835230 c:\users\user\desktop\tp final lab\juego\headers\juego.h
+1594919484 c:\users\user\desktop\tp final lab\juego\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594586318 source:c:\users\gaston\desktop\juego choto\destroy_it\main.cpp
@@ -1354,7 +1356,7 @@
 
 1594750222 c:\users\dalila\desktop\destroy it.exe\destroy_it\headers\cargarposiciones.h
 
-1594797926 c:\users\dalila\desktop\destroy it.exe\destroy_it\headers\juego.h
+1594883250 c:\users\dalila\desktop\destroy it.exe\destroy_it\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1511216292 c:\users\dalila\desktop\destroy it.exe\destroy_it\headers\collision.hpp
@@ -2715,7 +2717,7 @@
 	<SFML/Graphics.hpp>
 	"bomba.h"
 
-1594875849 c:\users\user\desktop\juego_con_nico\juegodemibb\headers\juego.h
+1594875883 c:\users\user\desktop\juego_con_nico\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594846004 source:c:\users\user\desktop\juego_con_nico\juegodemibb\src\bomba.cpp
@@ -2734,4 +2736,21 @@
 1594874410 source:c:\users\user\desktop\juego_con_nico\juegodemibb\src\jugador.cpp
 	<SFML/Graphics.hpp>
 	"Jugador.h"
+
+1594882221 source:c:\users\dalila\desktop\destroy it.exe\destroy_it\src\cubor.cpp
+	"cuboR.h"
+
+1594882222 c:\users\dalila\desktop\destroy it.exe\destroy_it\include\cubor.h
+	<SFML/Graphics.hpp>
+
+1594835230 source:c:\users\user\desktop\tp final lab\juego\collision.cpp
+	<SFML/Graphics.hpp>
+	<map>
+	"headers/Collision.hpp"
+
+1594919484 c:\users\user\desktop\tp final lab\juego\include\cubor.h
+	<SFML/Graphics.hpp>
+
+1594919484 source:c:\users\user\desktop\tp final lab\juego\src\cubor.cpp
+	"cuboR.h"
 
