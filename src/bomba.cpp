@@ -14,6 +14,7 @@ bomba::bomba(Texture &Bomba, Texture &Explosion_1)
 
 void bomba::Aparecer(float x,float y )
 {
+    Estado=0;
     posX=x;
     posY=y;
     BombaNormal.setPosition(posX,posY);

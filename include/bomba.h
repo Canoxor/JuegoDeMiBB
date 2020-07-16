@@ -48,6 +48,7 @@ public:
             return BombaNormal;
             break;
         case 1:
+            BombaExplotando_lvl_1.setPosition(posX-60,posY-60);
             return BombaExplotando_lvl_1;
             break;
         case 2:

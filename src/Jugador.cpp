@@ -11,6 +11,7 @@ Jugador::Jugador(float x, float y, int a)
     //ctor
     posX=x;
     posY=y;
+    tiempo=reloj.getElapsedTime();
 
 //    ultimatecla=Direcciones::Abajo;
 //    direccion=Direcciones::Ninguna;

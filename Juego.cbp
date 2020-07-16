@@ -49,6 +49,7 @@
 		<Unit filename="headers/CargarPosiciones.h" />
 		<Unit filename="headers/Collision.hpp" />
 		<Unit filename="headers/Juego.h" />
+		<Unit filename="headers/Partida.h" />
 		<Unit filename="include/Jugador.h" />
 		<Unit filename="include/bomba.h" />
 		<Unit filename="include/cubo.h" />

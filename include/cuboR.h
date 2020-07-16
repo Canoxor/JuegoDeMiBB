@@ -7,34 +7,54 @@ using namespace sf;
 class cuboR
 {
 
-    private:
+private:
 
     float posX;
     float posY;
     Texture moldeCuboR;
     Sprite cuerpoCuboR;
-    bool estado=false;
+    bool estado=true;
 
 
-    public:
-        cuboR();
-        cuboR(float,float);
+public:
+    /// Constr. Destr.
+    cuboR();
+    cuboR(float,float);
+    virtual ~cuboR();
 
+    /// Utilidad
+    void Destruir()
+    {
+        estado=false;
+    }
 
-        Sprite getSprite()
+    /// Get - Set
+    Sprite getSprite()
     {
         return cuerpoCuboR;
     }
 
+    void setPos(float x, float y);
 
-        virtual ~cuboR();
+    void setEstado(bool newState)
+    {
+        estado=newState;
+    }
 
+    float getPosX()
+    {
+        return posX;
+    }
 
-        void setPos(float x , float y);
-        void setEstado(bool newState){estado=newState;}
-        float getPosX(){return posX;}
-        float getPosY(){return posY;}
-        bool getEstado(){return estado;}
+    float getPosY()
+    {
+        return posY;
+    }
+
+    bool getEstado()
+    {
+        return estado;
+    }
 
 
 };

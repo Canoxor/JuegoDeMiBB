@@ -12,8 +12,8 @@ using namespace sf;
 #include "cuboR.h"
 #include "bomba.h"
 #include "Jugador.h"
+#include "headers/Partida.h"
 #include "headers/Juego.h"
-
 
 
 int main()
