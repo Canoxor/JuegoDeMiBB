@@ -5,13 +5,17 @@ using namespace sf;
 #include "Jugador.h"
 
 
+
 Jugador::Jugador(float x, float y, int a)
 {
     //ctor
     posX=x;
     posY=y;
 
-    if(!molde.loadFromFile("imagen/Personajes/personaje1.png"))
+//    ultimatecla=Direcciones::Abajo;
+//    direccion=Direcciones::Ninguna;
+
+    if(!molde.loadFromFile("imagen/Personajes/Jugador_1/Jug1_quieto_0.png"))
     {
         // Si hay un error salimos
         exit(1);

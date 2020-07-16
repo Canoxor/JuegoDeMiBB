@@ -12,28 +12,18 @@ void FuncionJuego()
 
     Clock relojfps;
     Time tiempo;
-
     int fps=60;
 
+    ///MAPA
     Texture mapita;
-
     if(!mapita.loadFromFile("imagen/Pantalla/mapita.png"))
     {
         ///Si hay un error salimos
         exit(1);
     }
-    ///MAPA
     Sprite mapa;
     mapa.setTexture(mapita);
-
-
-
-
-
-  ///JUGADORES /////////////////////////////////////////////////////////////////
-
-
-
+///JUGADORES /////////////////////////////////////////////////////////////////
     ///JUGADOR1
     Jugador Jugador_1(60, 60, 1);
     int danio;
@@ -42,12 +32,7 @@ void FuncionJuego()
     /// VECTOR JUGADORES
     int SpawnBombas[2][2]= {0};
 
-
-
-
-
-
-
+/// /////BOMBA /////////////////////////////////////////////////////////////////
     ///POSICIONES DEL CENTRO BOMBAS
     float VecX[13]= {0};
     float VecY[9]= {0};
@@ -76,17 +61,12 @@ void FuncionJuego()
         exit(1);
     }
 
-    /// ///BOMBA
     bomba Bomba_J1(Bomba_Roja_T,Explosion_1_T);
     bomba Bomba_J2(Bomba_Azul_T,Explosion_1_T);
     float PosicionAreaX[2]= {0};
     float PosicionAreaY[2]= {0};
     bool Danio;
     int restante=0;
-
-
-
-
 
     ///CUBO
     int x=0;
@@ -192,7 +172,9 @@ void FuncionJuego()
         }
         if(Bomba_J1.getTiempo()>=2)
         {
+
             Bomba_J1.setEstado(1);
+
         }
         if(Bomba_J1.getTiempo()>=4)
         {
@@ -204,9 +186,9 @@ void FuncionJuego()
 /// ///////////////////COLISION JUGADOR 1 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///COLISION ABAJO
-        if(Jugador_1.getSprite().getPosition().y+59 > 600)
+        if(Jugador_1.getSprite().getPosition().y+49 > 600)
         {
-            Jugador_1.setY(540);
+            Jugador_1.setY(600-49);
         }
 
         ///COLISION ARRIBA
@@ -217,9 +199,9 @@ void FuncionJuego()
 
 
         ///COLISION ANCHO DERECHA
-        if(Jugador_1.getSprite().getPosition().x+60 > 840)
+        if(Jugador_1.getSprite().getPosition().x+39 > 840)
         {
-            Jugador_1.setX(780);
+            Jugador_1.setX(840-39);
         }
 
         ///COLISION ANCHO IZQUIERDA
@@ -396,32 +378,32 @@ void FuncionJuego()
 
 /// ///////////////////COLISION JUGADOR 2 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            ///COLISION ABAJO
-            if(Jugador_2.getSprite().getPosition().y+59 > 600)
-            {
-                Jugador_2.setY(540);
-            }
-
-            ///COLISION ARRIBA
-            if(Jugador_2.getSprite().getPosition().y < 60)
-            {
-                Jugador_2.setY(60);
-            }
 
 
+        ///COLISION ABAJO
+        if(Jugador_2.getSprite().getPosition().y+49 > 600)
+        {
+            Jugador_2.setY(600-49);
+        }
 
-            ///COLISION ANCHO DERECHA
-            if(Jugador_2.getSprite().getPosition().x+59 > 840)
-            {
-                Jugador_2.setX(780);
-            }
+        ///COLISION ARRIBA
+        if(Jugador_2.getSprite().getPosition().y < 60)
+        {
+            Jugador_2.setY(60);
+        }
 
 
-            ///COLISION ANCHO IZQUIERDA
-            if(Jugador_2.getSprite().getPosition().x < 60)
-            {
-                Jugador_2.setX(60);
-            }
+        ///COLISION ANCHO DERECHA
+        if(Jugador_2.getSprite().getPosition().x+39 > 840)
+        {
+            Jugador_2.setX(840-39);
+        }
+
+        ///COLISION ANCHO IZQUIERDA
+        if(Jugador_2.getSprite().getPosition().x < 60)
+        {
+            Jugador_2.setX(60);
+        }
 
             // COLISIONES BLOQUES
 

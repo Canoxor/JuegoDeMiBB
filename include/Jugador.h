@@ -6,7 +6,7 @@
 using namespace sf;
 #include "bomba.h"
 
-
+enum Direcciones{Ninguna,Abajo,Arriba,Izquierda,Derecha};
 class Jugador
 {
 
@@ -22,8 +22,12 @@ class Jugador
         Texture molde;
         Sprite cuerpo;
 
+        Direcciones ultimatecla;
 
     public: ///METODOS
+
+
+        Direcciones direccion;
 
         Jugador(float a, float b, int c);
 
