@@ -9,6 +9,7 @@ void FuncionJuego()
 {
 
     RenderWindow window(VideoMode(1260, 660), "DESTROY_IT");
+    bool Mouse_Habilitado = true;
 
     Clock relojfps;
     Time tiempo;
@@ -19,24 +20,44 @@ void FuncionJuego()
     game.setTiempo();
 
     /// Menu
-    Texture MenuPrincipal;
-    if(!MenuPrincipal.loadFromFile("imagen/Pantalla/Principal.png"))
+    //Textures
+    Texture MenuPrincipal, Seleccionar;
+    int valorSeleccionar = 1;
+    if(!MenuPrincipal.loadFromFile("imagen/Pantalla/Menu_Principal.jpg"))
     {
         ///Si hay un error salimos
         exit(11);
     }
-    Sprite MenuPrincipal_S;
-    MenuPrincipal_S.setTexture(MenuPrincipal);
-
-    /// Victoria
-    Texture Victoria;
-    if(!Victoria.loadFromFile("imagen/Pantalla/Pantalla_Fin.jpg"))
+    if(!Seleccionar.loadFromFile("imagen/Pantalla/Seleccionar.png"))
     {
         ///Si hay un error salimos
-        exit(12);
+        exit(11);
     }
-    Sprite Victoria_S;
-    Victoria_S.setTexture(Victoria);
+    //Sprites
+    Sprite MenuPrincipal_S, Seleccionar_S;
+    MenuPrincipal_S.setTexture(MenuPrincipal);
+    Seleccionar_S.setTexture(Seleccionar);
+
+    /// Victoria
+    //Textures
+    Texture Victoria_J1_T, Victoria_J2_T;
+    if(!Victoria_J1_T.loadFromFile("imagen/Pantalla/Ganador_1.jpg"))
+    {
+        ///Si hay un error salimos
+        exit(13);
+    }
+    Victoria_J1_T.setSmooth(true);
+    if(!Victoria_J2_T.loadFromFile("imagen/Pantalla/Ganador_2.jpg"))
+    {
+        ///Si hay un error salimos
+        exit(13);
+    }
+    Victoria_J2_T.setSmooth(true);
+    //Sprites
+    Sprite Victoria_J1_S, Victoria_J2_S;
+
+    Victoria_J1_S.setTexture(Victoria_J1_T);
+    Victoria_J2_S.setTexture(Victoria_J2_T);
 
     /// MAPA
     Texture mapita;
@@ -65,12 +86,12 @@ void FuncionJuego()
     /// Sprites para las bombas
     Texture Bomba_Roja_T, Bomba_Azul_T;
 
-    if(!Bomba_Roja_T.loadFromFile("imagen/Bombas/Bomba_Roja_SinTransp.png"))
+    if(!Bomba_Roja_T.loadFromFile("imagen/Bombas/Bomba_Roja.png"))
     {
         ///Si hay un error salimos
         exit(1);
     }
-    if(!Bomba_Azul_T.loadFromFile("imagen/Bombas/Bomba_Azul_SinTransp.png"))
+    if(!Bomba_Azul_T.loadFromFile("imagen/Bombas/Bomba_Roja.png"))
     {
         ///Si hay un error salimos
         exit(1);
@@ -154,15 +175,85 @@ void FuncionJuego()
                 //game.setTiempo();
 
                 cout<<"TIEMPO DEL MENU"<<game.getTiempo()<<endl;
-                ///Borra
 
+                if (event.type == Event::KeyPressed)
+                {
+                    if(Mouse_Habilitado)
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::Down)))
+                        {
+                            if(Mouse_Habilitado)
+                            {
+                                if(valorSeleccionar == 3)
+                                {
+                                    valorSeleccionar = 1;
+                                }
+                                else
+                                {
+                                    valorSeleccionar++;
+                                }
+                            }
+                        }
+
+                        if((Keyboard::isKeyPressed(Keyboard::Up)))
+                        {
+                            if(valorSeleccionar == 1)
+                            {
+                                valorSeleccionar = 3;
+                            }
+                            else
+                            {
+                                valorSeleccionar--;
+                            }
+                        }
+                        Mouse_Habilitado = false;
+                    }
+                }
+                else
+                {
+                    Mouse_Habilitado = true;
+                }
+
+
+
+
+
+                ///Borra
                 window.clear();
 
                 window.draw(MenuPrincipal_S);
 
-                if(game.getTiempo()>=3)
+                switch(valorSeleccionar)
                 {
-                    game.SetEstado(1);
+                case 1:
+                    Seleccionar_S.setPosition(630,60);
+                    window.draw(Seleccionar_S);
+                    break;
+                case 2:
+                    Seleccionar_S.setPosition(630,200);
+                    window.draw(Seleccionar_S);
+                    break;
+                case 3:
+                    Seleccionar_S.setPosition(20,145);
+                    window.draw(Seleccionar_S);
+                    break;
+                default:
+                    break;
+                }
+
+                if((Keyboard::isKeyPressed(Keyboard::Enter)))
+                {
+                    switch(valorSeleccionar)
+                    {
+                    case 1:
+                        game.SetEstado(1);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        exit(777);
+                        break;
+                    }
                 }
 
                 /// FIN DEL MENU
@@ -469,7 +560,6 @@ void FuncionJuego()
 
 ///=////////////////////////////////////////////////////// Jugador pierde vida /////////////////////////////////////////////////////////////////////////
 
-                //cout<<endl<<endl<<" VIDA JUGADOR 1 ="<<Jugador_1.GetVida()<<endl<<endl;
                 /// Jugador 1 dañado por las 2 bombas
                 if(Bomba_J1.getEstado()!=0 && Bomba_J1.getmostrar()==true)
                 {
@@ -478,7 +568,6 @@ void FuncionJuego()
                         if(Jugador_1.getTiempo()>=3 )
                         {
                             Jugador_1.Daniar();
-                            //cout<<endl<<endl<<" VIDA JUGADOR 1 ="<<Jugador_1.GetVida()<<endl<<endl;
                             Jugador_1.setTiempo();
 
                             if(Jugador_1.GetVida()==0)
@@ -492,41 +581,73 @@ void FuncionJuego()
                         }
                     }
                 }
-                /*
-                if(Bomba_J2.getEstado()!=0)
+
+                if(Bomba_J2.getEstado()!=0 && Bomba_J2.getmostrar()==true)
                 {
                     if(Collision::PixelPerfectTest(Bomba_J2.getSpriteBomba(), Jugador_1.getSprite()))
                     {
-                        Jugador_1.Daniar();
+                        if(Jugador_1.getTiempo()>=3 )
+                        {
+                            Jugador_1.Daniar();
+                            Jugador_1.setTiempo();
+
+                            if(Jugador_1.GetVida()==0)
+                            {
+                                /// Gana el jugador 2
+                                game.SetGanador(2);
+                                game.SetEstado(2);
+                                game.setTiempo();
+                                break;
+                            }
+                        }
                     }
                 }
 
-
-
                 /// Jugador 2 dañado por las 2 bombas
-                if(Bomba_J1.getEstado()!=0)
+                if(Bomba_J1.getEstado()!=0 && Bomba_J1.getmostrar()==true)
                 {
                     if(Collision::PixelPerfectTest(Bomba_J1.getSpriteBomba(), Jugador_2.getSprite()))
                     {
-                        Jugador_2.Daniar();
+                        if(Jugador_2.getTiempo()>=3 )
+                        {
+                            Jugador_2.Daniar();
+                            //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
+                            Jugador_2.setTiempo();
+
+                            if(Jugador_2.GetVida()==0)
+                            {
+                                /// Gana el jugador 1
+                                game.SetGanador(1);
+                                game.SetEstado(2);
+                                game.setTiempo();
+                                break;
+                            }
+                        }
                     }
                 }
 
-                if(Bomba_J2.getEstado()!=0)
+                if(Bomba_J2.getEstado()!=0 && Bomba_J2.getmostrar()==true)
                 {
                     if(Collision::PixelPerfectTest(Bomba_J2.getSpriteBomba(), Jugador_2.getSprite()))
                     {
-                        Jugador_2.Daniar();
+                        if(Jugador_2.getTiempo()>=3 )
+                        {
+                            Jugador_2.Daniar();
+                            //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
+                            Jugador_2.setTiempo();
+
+                            if(Jugador_2.GetVida()==0)
+                            {
+                                /// Gana el jugador 1
+                                game.SetGanador(1);
+                                game.SetEstado(2);
+                                game.setTiempo();
+                                break;
+                            }
+                        }
                     }
                 }
 
-                if(Jugador_2.GetVida()==0)
-                {
-                    /// Gana el jugador 1
-                    game.SetGanador(1);
-                    game.SetEstado(2);
-                }
-                */
 /// ///////////////////  TECLADO  JUGADOR 2 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -585,6 +706,26 @@ void FuncionJuego()
                 }
 
 /// ////////////////// BOMBA JUGADOR 2 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                if((Keyboard::isKeyPressed(Keyboard::Space)))
+                {
+                    if(Bomba_J2.getmostrar()==false)
+                    {
+                        VerificarPosicion(SpawnBombas,Jugador_2.getX(),Jugador_2.getY(),VecX,VecY);
+                        Bomba_J2.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
+                        Bomba_J2.setmostrar(true);
+                        Bomba_J2.setTiempo();
+                    }
+                }
+                if(Bomba_J2.getTiempo()>=2)
+                {
+                    Bomba_J2.setEstado(1);
+                }
+                if(Bomba_J2.getTiempo()>=4)
+                {
+                    Bomba_J2.setmostrar(false);
+                    Bomba_J2.setTiempo();
+                }
 
 /// ///////////////////COLISION JUGADOR 2 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -803,12 +944,12 @@ void FuncionJuego()
                 {
                 case 1:
                     /// Victoria del jugador 1
-                    window.draw(Victoria_S);
+                    window.draw(Victoria_J1_S);
                     break;
 
                 case 2:
                     /// Victoria del jugador 2
-                    window.draw(Victoria_S);
+                    window.draw(Victoria_J2_S);
                     break;
 
                 default:
