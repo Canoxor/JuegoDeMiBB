@@ -17,7 +17,7 @@ void FuncionJuego()
     // Musica del menu
     Musica Musica_Menu("musica/Musica_menu.ogg");
     Musica_Menu.repeticion(true);
-    Musica_Menu.volumen(20);
+    Musica_Menu.volumen(10);
 
     // Musica del juego
     Musica Musica_Juego("musica/Musica_juego.ogg");
@@ -27,15 +27,17 @@ void FuncionJuego()
     // Musica al ganar
     Musica Musica_Victoria("musica/Musica_victoria.ogg");
     Musica_Victoria.repeticion(true);
+    Musica_Victoria.volumen(30);
 
     // Sonido menu
     FX Sonido_MenuPrincipal("musica/FX/select_menu.wav");
     Sonido_MenuPrincipal.cambiar_volumen(100);
 
     // Sonido bomba colocar
+    /*
     FX Sonido_ColocarBomba("musica/FX/building.wav");
     Sonido_ColocarBomba.cambiar_volumen(100);
-
+    */
 
     Clock relojfps;
     Time tiempo;
@@ -429,7 +431,7 @@ void FuncionJuego()
                         {
                             if(Bomba_J1.getmostrar()==false)
                             {
-                                Sonido_ColocarBomba.encender();
+                                //Sonido_ColocarBomba.encender();
 
                                 VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
                                 Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
@@ -843,7 +845,7 @@ void FuncionJuego()
                 {
                     if(Bomba_J2.getmostrar()==false)
                     {
-                        Sonido_ColocarBomba.encender();
+                        //Sonido_ColocarBomba.encender();
 
                         VerificarPosicion(SpawnBombas,Jugador_2.getX(),Jugador_2.getY(),VecX,VecY);
                         Bomba_J2.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
