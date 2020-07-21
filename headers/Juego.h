@@ -17,16 +17,24 @@ void FuncionJuego()
     // Musica del menu
     Musica Musica_Menu("musica/Musica_menu.ogg");
     Musica_Menu.repeticion(true);
+    Musica_Menu.volumen(20);
 
     // Musica del juego
     Musica Musica_Juego("musica/Musica_juego.ogg");
     Musica_Juego.repeticion(true);
+    Musica_Juego.volumen(30);
 
     // Musica al ganar
     Musica Musica_Victoria("musica/Musica_victoria.ogg");
     Musica_Victoria.repeticion(true);
 
-    //FX Sonido_MenuPrincipal("musica/FX/select_menu.wav");
+    // Sonido menu
+    FX Sonido_MenuPrincipal("musica/FX/select_menu.wav");
+    Sonido_MenuPrincipal.cambiar_volumen(100);
+
+    // Sonido bomba colocar
+    FX Sonido_ColocarBomba("musica/FX/building.wav");
+    Sonido_ColocarBomba.cambiar_volumen(100);
 
 
     Clock relojfps;
@@ -246,6 +254,8 @@ void FuncionJuego()
                         {
                             if(Mouse_Habilitado)
                             {
+                                Sonido_MenuPrincipal.encender();
+
                                 if(valorSeleccionar == 3)
                                 {
                                     valorSeleccionar = 1;
@@ -259,6 +269,8 @@ void FuncionJuego()
 
                         if((Keyboard::isKeyPressed(Keyboard::Up)))
                         {
+                            Sonido_MenuPrincipal.encender();
+
                             if(valorSeleccionar == 1)
                             {
                                 valorSeleccionar = 3;
@@ -417,6 +429,8 @@ void FuncionJuego()
                         {
                             if(Bomba_J1.getmostrar()==false)
                             {
+                                Sonido_ColocarBomba.encender();
+
                                 VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
                                 Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
                                 Bomba_J1.setmostrar(true);
@@ -829,6 +843,8 @@ void FuncionJuego()
                 {
                     if(Bomba_J2.getmostrar()==false)
                     {
+                        Sonido_ColocarBomba.encender();
+
                         VerificarPosicion(SpawnBombas,Jugador_2.getX(),Jugador_2.getY(),VecX,VecY);
                         Bomba_J2.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
                         Bomba_J2.setmostrar(true);

@@ -2263,7 +2263,7 @@
 	"bomba.h"
 	"InterfazJug.h"
 
-1595356800 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
+1595358112 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594922384 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\bomba.cpp
@@ -2890,5 +2890,5 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1595356397 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\sonido.h
+1595357427 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\sonido.h
 
