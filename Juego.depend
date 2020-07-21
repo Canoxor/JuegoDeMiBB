@@ -1821,16 +1821,20 @@
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
-1594926429 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
+1595307273 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
 	<SFML/Graphics.hpp>
 	<iostream>
+	<cstdlib>
+	<ctime>
 	"headers/Collision.hpp"
 	"headers/CargarPosiciones.h"
 	"cubo.h"
 	"cuboR.h"
 	"bomba.h"
 	"Jugador.h"
+	"InterfazJug.h"
 	"headers/Partida.h"
+	"headers/mapas.h"
 	"headers/Juego.h"
 
 1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\graphics.hpp
@@ -2252,11 +2256,12 @@
 1594923098 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\bomba.h
 	<SFML/Graphics.hpp>
 
-1594927723 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
+1595310016 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
 	<SFML/Graphics.hpp>
 	"bomba.h"
+	"InterfazJug.h"
 
-1595277026 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
+1595310172 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594922384 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\bomba.cpp
@@ -2272,7 +2277,7 @@
 
 1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\item.h
 
-1594927454 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\jugador.cpp
+1595297804 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\jugador.cpp
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
@@ -2759,8 +2764,23 @@
 1594924063 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\cubor.h
 	<SFML/Graphics.hpp>
 
-1594922057 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\cubor.cpp
+1595294406 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\cubor.cpp
 	"cuboR.h"
 
 1594928577 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\partida.h
+
+1595289655 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\interfazjug.h
+	<SFML/Graphics.hpp>
+	"Jugador.h"
+
+1595299408 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\interfazjug.cpp
+	<SFML/Graphics.hpp>
+	"Jugador.h"
+	"InterfazJug.h"
+
+1595309090 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\mapas.h
+	"cuboR.h"
+	"ctime"
+
+1595307216 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\archivos.h
 

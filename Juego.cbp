@@ -50,12 +50,15 @@
 		<Unit filename="headers/Collision.hpp" />
 		<Unit filename="headers/Juego.h" />
 		<Unit filename="headers/Partida.h" />
+		<Unit filename="headers/mapas.h" />
+		<Unit filename="include/InterfazJug.h" />
 		<Unit filename="include/Jugador.h" />
 		<Unit filename="include/bomba.h" />
 		<Unit filename="include/cubo.h" />
 		<Unit filename="include/cuboR.h" />
 		<Unit filename="include/item.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/InterfazJug.cpp" />
 		<Unit filename="src/Jugador.cpp" />
 		<Unit filename="src/bomba.cpp" />
 		<Unit filename="src/cubo.cpp" />

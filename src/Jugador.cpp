@@ -39,21 +39,26 @@ Jugador::Jugador(float x, float y, int a)
 
 }
 
+void Jugador::setScreenJug(float x, float y, int cant=3)
+{
+    screenJug.setPos(x, y, cant); /// podria pasar como parametro la vida que tiene el jug
+}
+
+
 void Jugador::setPos(float x, float y)
 {
-
     posX=x;
     posY=y;
-/*
-    if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
-    {
-        // Si hay un error salimos
-        exit(1);
-    }
+    /*
+        if(!molde.loadFromFile("imagen/Personajes/lobito.png"))
+        {
+            // Si hay un error salimos
+            exit(1);
+        }
 
-    cuerpo.setTexture(molde);
-    cuerpo.setPosition(x, y);
-/*/
+        cuerpo.setTexture(molde);
+        cuerpo.setPosition(x, y);
+    /*/
 }
 
 void Jugador::moverDerecha(float x, float y, float v)
@@ -84,6 +89,7 @@ void Jugador::moverArriba(float x,float y, float v)
     setX(x);
     setY(y);
     cuerpo.setPosition(x,y);
+
 
 }
 

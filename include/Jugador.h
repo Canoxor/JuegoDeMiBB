@@ -5,6 +5,7 @@
 
 using namespace sf;
 #include "bomba.h"
+#include "InterfazJug.h"
 
 enum Direcciones {Ninguna,Abajo,Arriba,Izquierda,Derecha};
 class Jugador
@@ -24,10 +25,21 @@ protected:
     Clock reloj;
     Time tiempo;
 
+    InterfazJug screenJug;
+
     Direcciones ultimatecla;
 
 public: ///METODOS
 
+    void Reset(float x,float y)
+    {
+        posX = x;
+        posY = y;
+        cuerpo.setPosition(x,y);
+        vida = 3;
+        velocidad = 1.f;
+        reloj.restart();
+    }
 
     Direcciones direccion;
 
@@ -90,6 +102,8 @@ public: ///METODOS
         return DireccionY;
     }
 
+    InterfazJug getScreenJug(){return screenJug;}
+
 
     ///SET
     void setX(float valorX)
@@ -118,6 +132,7 @@ public: ///METODOS
         DireccionY=dirY;
     }
 
+    void setScreenJug(float, float, int);
 };
 
 

@@ -10,6 +10,7 @@ void FuncionJuego()
 
     RenderWindow window(VideoMode(1260, 660), "DESTROY_IT");
     bool Mouse_Habilitado = true;
+    bool BuggEnter = true;
 
     Clock relojfps;
     Time tiempo;
@@ -68,16 +69,23 @@ void FuncionJuego()
     }
     Sprite mapa;
     mapa.setTexture(mapita);
+
+    bool mapaCargado = false;
+
 ///JUGADORES /////////////////////////////////////////////////////////////////
+
     ///JUGADOR1
     Jugador Jugador_1(60, 60, 1);
+    Jugador_1.setScreenJug(960,60,3);
     int danio;
     ///JUGADOR2
     Jugador Jugador_2(780, 540, 0);
+    Jugador_2.setScreenJug(960, 300, 3);
     /// VECTOR JUGADORES
     int SpawnBombas[2][2]= {0};
 
 /// /////BOMBA /////////////////////////////////////////////////////////////////
+
     ///POSICIONES DEL CENTRO BOMBAS
     float VecX[13]= {0};
     float VecY[9]= {0};
@@ -128,11 +136,38 @@ void FuncionJuego()
         }
     }
 
-    ///CUBO R
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
 
+
+    cuboR vcuboR[9][13];
+    int randomNumber;
+
+    srand((unsigned) time(0));
+
+    switch(randomNumber)
+    {
+    ///archivo MAPA 1
+    case 1:
+        crearMapa1();
+        break;
+
+    ///archivo MAPA 2
+    case 2:
+        crearMapa2();
+        break;
+
+    ///archivo MAPA 3
+    case 3:
+        crearMapa3();
+        break;
+    }
+
+
+    /*
     xc=60;
     yc=60;
-    cuboR vcuboR[9][13];
 
     for(y=1; y<10; y++)
     {
@@ -141,6 +176,7 @@ void FuncionJuego()
             vcuboR[y-1][x-1].setPos((float)xc*x, (float) yc*y);
         }
     }
+
     vcuboR[0][0].setPos(120, 120);  ///estos se setean aparte para que no le ocupen el spawn
     vcuboR[0][1].setPos(120, 120);
     vcuboR[1][0].setPos(120, 120);
@@ -148,7 +184,12 @@ void FuncionJuego()
     vcuboR[8][12].setPos(240, 240);
     vcuboR[7][12].setPos(240, 240);
     vcuboR[8][11].setPos(240, 240);
+    */
 
+
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
+    /// ===================================CUBO R NUMERO RAND CON ARCHIVO =============================================================== ///
 
     ///fin dibujo cubos
 
@@ -171,10 +212,7 @@ void FuncionJuego()
             switch(game.GetEstado())
             {
             case 0:
-                /// ESTADO MENU
-                //game.setTiempo();
-
-                cout<<"TIEMPO DEL MENU"<<game.getTiempo()<<endl;
+                //cout<<"TIEMPO DEL MENU"<<game.getTiempo()<<endl;
 
                 if (event.type == Event::KeyPressed)
                 {
@@ -214,10 +252,6 @@ void FuncionJuego()
                     Mouse_Habilitado = true;
                 }
 
-
-
-
-
                 ///Borra
                 window.clear();
 
@@ -246,11 +280,26 @@ void FuncionJuego()
                     switch(valorSeleccionar)
                     {
                     case 1:
+                        /// NUEVA PARTIDA
+                        randomNumber =  (rand() % 3) +1;;
+                        CargarMapa(vcuboR, randomNumber);
+
+                        Jugador_1.Reset(60,60);
+                        Jugador_1.setScreenJug(960,60,3);
+                        BuggEnter = true;
+
+                        Jugador_2.Reset(780, 540);
+                        Jugador_2.setScreenJug(960, 300, 3);
+
+                        tiempo1 = 0;
+
                         game.SetEstado(1);
                         break;
                     case 2:
+                        /// CARGAR PARTIDA
                         break;
                     case 3:
+                        /// SALIR
                         exit(777);
                         break;
                     }
@@ -267,7 +316,6 @@ void FuncionJuego()
                 /// ABAJO
                 if ((Keyboard::isKeyPressed(Keyboard::Down)&&(Keyboard::isKeyPressed(Keyboard::Left)) ||  (Keyboard::isKeyPressed(Keyboard::Right)) ))
                 {
-
                 }
                 else
                 {
@@ -321,14 +369,32 @@ void FuncionJuego()
                 }
 /// ////////////////// BOMBA JUGADOR 1 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                // Margen de inicio
+                if(tiempo1 > 2)
+                {
+                    BuggEnter = false;
+                }
+
                 if((Keyboard::isKeyPressed(Keyboard::Enter)))
                 {
-                    if(Bomba_J1.getmostrar()==false)
+                    if(Mouse_Habilitado)
                     {
-                        VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
-                        Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
-                        Bomba_J1.setmostrar(true);
-                        Bomba_J1.setTiempo();
+                        Mouse_Habilitado = false;
+
+                        if(BuggEnter == false)
+                        {
+                            if(Bomba_J1.getmostrar()==false)
+                            {
+                                VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
+                                Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
+                                Bomba_J1.setmostrar(true);
+                                Bomba_J1.setTiempo();
+                            }
+                            else
+                            {
+                                Mouse_Habilitado = true;
+                            }
+                        }
                     }
                 }
                 if(Bomba_J1.getTiempo()>=2)
@@ -569,6 +635,7 @@ void FuncionJuego()
                         {
                             Jugador_1.Daniar();
                             Jugador_1.setTiempo();
+                            Jugador_1.setScreenJug(960, 60, Jugador_1.GetVida());
 
                             if(Jugador_1.GetVida()==0)
                             {
@@ -590,6 +657,7 @@ void FuncionJuego()
                         {
                             Jugador_1.Daniar();
                             Jugador_1.setTiempo();
+                            Jugador_1.setScreenJug(960, 60, Jugador_1.GetVida());
 
                             if(Jugador_1.GetVida()==0)
                             {
@@ -613,6 +681,7 @@ void FuncionJuego()
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
                             Jugador_2.setTiempo();
+                            Jugador_2.setScreenJug(960, 300, Jugador_1.GetVida());
 
                             if(Jugador_2.GetVida()==0)
                             {
@@ -635,6 +704,7 @@ void FuncionJuego()
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
                             Jugador_2.setTiempo();
+                            Jugador_2.setScreenJug(960, 300, Jugador_1.GetVida());
 
                             if(Jugador_2.GetVida()==0)
                             {
@@ -707,6 +777,14 @@ void FuncionJuego()
 
 /// ////////////////// BOMBA JUGADOR 2 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                if(Mouse_Habilitado)
+                {
+                    Mouse_Habilitado = false;
+                }
+                else
+                {
+                    Mouse_Habilitado = true;
+                }
                 if((Keyboard::isKeyPressed(Keyboard::Space)))
                 {
                     if(Bomba_J2.getmostrar()==false)
@@ -928,6 +1006,8 @@ void FuncionJuego()
                 }
                 window.draw(Jugador_1.getSprite());
                 window.draw(Jugador_2.getSprite());
+                window.draw(Jugador_1.getScreenJug().getSprite());
+                window.draw(Jugador_2.getScreenJug().getSprite());
 
                 /// FIN DEL JUEGO
                 break;
