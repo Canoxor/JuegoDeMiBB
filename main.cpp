@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -15,6 +16,7 @@ using namespace sf;
 #include "InterfazJug.h"
 #include "headers/Partida.h"
 #include "headers/mapas.h"
+#include "headers/Sonido.h"
 #include "headers/Juego.h"
 
 

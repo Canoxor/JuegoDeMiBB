@@ -1821,8 +1821,9 @@
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
-1595307273 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
+1595353508 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -1835,6 +1836,7 @@
 	"InterfazJug.h"
 	"headers/Partida.h"
 	"headers/mapas.h"
+	"headers/Sonido.h"
 	"headers/Juego.h"
 
 1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\graphics.hpp
@@ -2261,7 +2263,7 @@
 	"bomba.h"
 	"InterfazJug.h"
 
-1595310172 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
+1595356800 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594922384 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\bomba.cpp
@@ -2783,4 +2785,110 @@
 	"ctime"
 
 1595307216 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\archivos.h
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundfilefactory.inl
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1595356397 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\sonido.h
 

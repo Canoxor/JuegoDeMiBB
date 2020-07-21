@@ -21,6 +21,7 @@
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
+					<Add library="sfml-audio-d" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -50,6 +51,7 @@
 		<Unit filename="headers/Collision.hpp" />
 		<Unit filename="headers/Juego.h" />
 		<Unit filename="headers/Partida.h" />
+		<Unit filename="headers/Sonido.h" />
 		<Unit filename="headers/mapas.h" />
 		<Unit filename="include/InterfazJug.h" />
 		<Unit filename="include/Jugador.h" />

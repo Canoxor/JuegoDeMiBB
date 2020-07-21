@@ -12,6 +12,23 @@ void FuncionJuego()
     bool Mouse_Habilitado = true;
     bool BuggEnter = true;
 
+    /// SONIDO
+
+    // Musica del menu
+    Musica Musica_Menu("musica/Musica_menu.ogg");
+    Musica_Menu.repeticion(true);
+
+    // Musica del juego
+    Musica Musica_Juego("musica/Musica_juego.ogg");
+    Musica_Juego.repeticion(true);
+
+    // Musica al ganar
+    Musica Musica_Victoria("musica/Musica_victoria.ogg");
+    Musica_Victoria.repeticion(true);
+
+    //FX Sonido_MenuPrincipal("musica/FX/select_menu.wav");
+
+
     Clock relojfps;
     Time tiempo;
     int fps=60;
@@ -212,6 +229,13 @@ void FuncionJuego()
             switch(game.GetEstado())
             {
             case 0:
+                /// ESTADO MENU PRINCIPAL
+                // Enciende la musica del menu
+                if(!Musica_Menu.getEncendida())
+                {
+                    Musica_Menu.reproducir();
+                }
+
                 //cout<<"TIEMPO DEL MENU"<<game.getTiempo()<<endl;
 
                 if (event.type == Event::KeyPressed)
@@ -277,6 +301,9 @@ void FuncionJuego()
 
                 if((Keyboard::isKeyPressed(Keyboard::Enter)))
                 {
+                    // Apaga la musica del menu
+                    Musica_Menu.parar();
+
                     switch(valorSeleccionar)
                     {
                     case 1:
@@ -310,6 +337,11 @@ void FuncionJuego()
 
             case 1:
                 /// ESTADO JUEGO
+                // Enciende la musica del juego
+                if(!Musica_Juego.getEncendida())
+                {
+                    Musica_Juego.reproducir();
+                }
 
                 ///TECLADO  JUGADOR 1 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -370,7 +402,7 @@ void FuncionJuego()
 /// ////////////////// BOMBA JUGADOR 1 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 // Margen de inicio
-                if(tiempo1 > 2)
+                if(Jugador_1.getTiempo() > 2)
                 {
                     BuggEnter = false;
                 }
@@ -640,6 +672,8 @@ void FuncionJuego()
                             if(Jugador_1.GetVida()==0)
                             {
                                 /// Gana el jugador 2
+                                Musica_Juego.parar();
+
                                 game.SetGanador(2);
                                 game.SetEstado(2);
                                 game.setTiempo();
@@ -662,6 +696,8 @@ void FuncionJuego()
                             if(Jugador_1.GetVida()==0)
                             {
                                 /// Gana el jugador 2
+                                Musica_Juego.parar();
+
                                 game.SetGanador(2);
                                 game.SetEstado(2);
                                 game.setTiempo();
@@ -681,11 +717,13 @@ void FuncionJuego()
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
                             Jugador_2.setTiempo();
-                            Jugador_2.setScreenJug(960, 300, Jugador_1.GetVida());
+                            Jugador_2.setScreenJug(960, 300, Jugador_2.GetVida());
 
                             if(Jugador_2.GetVida()==0)
                             {
                                 /// Gana el jugador 1
+                                Musica_Juego.parar();
+
                                 game.SetGanador(1);
                                 game.SetEstado(2);
                                 game.setTiempo();
@@ -704,11 +742,13 @@ void FuncionJuego()
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
                             Jugador_2.setTiempo();
-                            Jugador_2.setScreenJug(960, 300, Jugador_1.GetVida());
+                            Jugador_2.setScreenJug(960, 300, Jugador_2.GetVida());
 
                             if(Jugador_2.GetVida()==0)
                             {
                                 /// Gana el jugador 1
+                                Musica_Juego.parar();
+
                                 game.SetGanador(1);
                                 game.SetEstado(2);
                                 game.setTiempo();
@@ -1014,6 +1054,12 @@ void FuncionJuego()
 
             case 2:
                 /// ESTADO VICTORIA
+                // Enciende la musica de victoria
+                if(!Musica_Victoria.getEncendida())
+                {
+                    Musica_Victoria.reproducir();
+                }
+
                 //cout<<"ENTRE A LA VICTORIA"<<endl;
                 //game.setTiempo();
                 ///Borra
@@ -1039,6 +1085,7 @@ void FuncionJuego()
                 }
                 if(game.getTiempo()>=3)
                 {
+                    Musica_Victoria.parar();
                     game.SetEstado(0);
                     game.setTiempo();
                 }
