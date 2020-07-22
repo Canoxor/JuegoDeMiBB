@@ -101,13 +101,248 @@ void FuncionJuego()
 
 ///JUGADORES /////////////////////////////////////////////////////////////////
 
+    // Sprites para el JUGADOR 1
+
+    /// Texture Quito
+    Texture J1_K_Quieto;
+
+    if(!J1_K_Quieto.loadFromFile("imagen/Personajes/Jugador_1/Jug1_Pausa.png"))
+    {
+        exit(200);
+    }
+
+    /// Texture Derecha
+    Texture J1_D_Pie_Derecho_1, J1_D_Pie_Derecho_2, J1_D_Pie_Izquierdo_1, J1_D_Pie_Izquierdo_2, J1_D_Pausa;
+
+    if(!J1_D_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_1/Derecha/Jug1_Pie_Derecho_1.png"))
+    {
+        exit(201);
+    }
+    if(!J1_D_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_1/Derecha/Jug1_Pie_Derecho_2.png"))
+    {
+        exit(202);
+    }
+    if(!J1_D_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_1/Derecha/Jug1_Pie_Izquierdo_1.png"))
+    {
+        exit(203);
+    }
+    if(!J1_D_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_1/Derecha/Jug1_Pie_Izquierdo_2.png"))
+    {
+        exit(204);
+    }
+    if(!J1_D_Pausa.loadFromFile("imagen/Personajes/Jugador_1/Derecha/Jug1_Pausa.png"))
+    {
+        exit(205);
+    }
+
+    /// Texture Izquierda
+    Texture J1_I_Pie_Derecho_1, J1_I_Pie_Derecho_2, J1_I_Pie_Izquierdo_1, J1_I_Pie_Izquierdo_2, J1_I_Pausa;
+
+    if(!J1_I_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_1/Izquierda/Jug1_Pie_Derecho_1.png"))
+    {
+        exit(206);
+    }
+    if(!J1_I_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_1/Izquierda/Jug1_Pie_Derecho_2.png"))
+    {
+        exit(207);
+    }
+    if(!J1_I_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_1/Izquierda/Jug1_Pie_Izquierdo_1.png"))
+    {
+        exit(208);
+    }
+    if(!J1_I_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_1/Izquierda/Jug1_Pie_Izquierdo_2.png"))
+    {
+        exit(209);
+    }
+    if(!J1_I_Pausa.loadFromFile("imagen/Personajes/Jugador_1/Izquierda/Jug1_Pausa.png"))
+    {
+        exit(210);
+    }
+
+    /// Texture Arriba
+    Texture J1_AR_Pie_Derecho_1, J1_AR_Pie_Derecho_2, J1_AR_Pie_Izquierdo_1, J1_AR_Pie_Izquierdo_2, J1_AR_Pausa;
+
+    if(!J1_AR_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_1/Arriba/Jug1_Pie_Derecho_1.png"))
+    {
+        exit(211);
+    }
+    if(!J1_AR_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_1/Arriba/Jug1_Pie_Derecho_2.png"))
+    {
+        exit(212);
+    }
+    if(!J1_AR_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_1/Arriba/Jug1_Pie_Izquierdo_1.png"))
+    {
+        exit(213);
+    }
+    if(!J1_AR_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_1/Arriba/Jug1_Pie_Izquierdo_2.png"))
+    {
+        exit(214);
+    }
+    if(!J1_AR_Pausa.loadFromFile("imagen/Personajes/Jugador_1/Arriba/Jug1_Pausa.png"))
+    {
+        exit(215);
+    }
+
+    /// Texture Abajo
+    Texture J1_AB_Pie_Derecho_1, J1_AB_Pie_Derecho_2, J1_AB_Pie_Izquierdo_1, J1_AB_Pie_Izquierdo_2, J1_AB_Pausa;
+
+    if(!J1_AB_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_1/Abajo/Jug1_Pie_Derecho_1.png"))
+    {
+        exit(217);
+    }
+    if(!J1_AB_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_1/Abajo/Jug1_Pie_Derecho_2.png"))
+    {
+        exit(218);
+    }
+    if(!J1_AB_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_1/Abajo/Jug1_Pie_Izquierdo_1.png"))
+    {
+        exit(219);
+    }
+    if(!J1_AB_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_1/Abajo/Jug1_Pie_Izquierdo_2.png"))
+    {
+        exit(220);
+    }
+    if(!J1_AB_Pausa.loadFromFile("imagen/Personajes/Jugador_1/Abajo/Jug1_Pausa.png"))
+    {
+        exit(221);
+    }
+
+    // Sprites para el JUGADOR 2
+
+    /// Texture Quito
+    Texture J2_K_Quieto;
+
+    if(!J2_K_Quieto.loadFromFile("imagen/Personajes/Jugador_2/Jug2_Pausa.png"))
+    {
+        exit(200);
+    }
+
+    /// Texture Derecha
+    Texture J2_D_Pie_Derecho_1, J2_D_Pie_Derecho_2, J2_D_Pie_Izquierdo_1, J2_D_Pie_Izquierdo_2, J2_D_Pausa;
+
+    if(!J2_D_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_2/Derecha/Jug2_Pie_Derecho_1.png"))
+    {
+        exit(201);
+    }
+    if(!J2_D_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_2/Derecha/Jug2_Pie_Derecho_2.png"))
+    {
+        exit(202);
+    }
+    if(!J2_D_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_2/Derecha/Jug2_Pie_Izquierdo_1.png"))
+    {
+        exit(203);
+    }
+    if(!J2_D_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_2/Derecha/Jug2_Pie_Izquierdo_2.png"))
+    {
+        exit(204);
+    }
+    if(!J2_D_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Derecha/Jug2_Pausa.png"))
+    {
+        exit(205);
+    }
+
+    /// Texture Izquierda
+    Texture J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2, J2_I_Pausa;
+
+    if(!J2_I_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Derecho_1.png"))
+    {
+        exit(206);
+    }
+    if(!J2_I_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Derecho_2.png"))
+    {
+        exit(207);
+    }
+    if(!J2_I_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Izquierdo_1.png"))
+    {
+        exit(208);
+    }
+    if(!J2_I_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Izquierdo_2.png"))
+    {
+        exit(209);
+    }
+    if(!J2_I_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pausa.png"))
+    {
+        exit(210);
+    }
+
+    /// Texture Arriba
+    Texture J2_AR_Pie_Derecho_1, J2_AR_Pie_Derecho_2, J2_AR_Pie_Izquierdo_1, J2_AR_Pie_Izquierdo_2, J2_AR_Pausa;
+
+    if(!J2_AR_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_2/Arriba/Jug2_Pie_Derecho_1.png"))
+    {
+        exit(211);
+    }
+    if(!J2_AR_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_2/Arriba/Jug2_Pie_Derecho_2.png"))
+    {
+        exit(212);
+    }
+    if(!J2_AR_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_2/Arriba/Jug2_Pie_Izquierdo_2.png"))
+    {
+        exit(213);
+    }
+    if(!J2_AR_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_2/Arriba/Jug2_Pie_Izquierdo_1.png"))
+    {
+        exit(214);
+    }
+    if(!J2_AR_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Arriba/Jug2_Pausa.png"))
+    {
+        exit(215);
+    }
+
+    /// Texture Abajo
+    Texture J2_AB_Pie_Derecho_1, J2_AB_Pie_Derecho_2, J2_AB_Pie_Izquierdo_1, J2_AB_Pie_Izquierdo_2, J2_AB_Pausa;
+
+    if(!J2_AB_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_2/Abajo/Jug2_Pie_Derecho_1.png"))
+    {
+        exit(217);
+    }
+    if(!J2_AB_Pie_Derecho_2.loadFromFile("imagen/Personajes/Jugador_2/Abajo/Jug2_Pie_Derecho_2.png"))
+    {
+        exit(218);
+    }
+    if(!J2_AB_Pie_Izquierdo_1.loadFromFile("imagen/Personajes/Jugador_2/Abajo/Jug2_Pie_Izquierdo_2.png"))
+    {
+        exit(219);
+    }
+    if(!J2_AB_Pie_Izquierdo_2.loadFromFile("imagen/Personajes/Jugador_2/Abajo/Jug2_Pie_Izquierdo_1.png"))
+    {
+        exit(220);
+    }
+    if(!J2_AB_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Abajo/Jug2_Pausa.png"))
+    {
+        exit(221);
+    }
+
     ///JUGADOR1
-    Jugador Jugador_1(60, 60, 1);
+    Jugador Jugador_1(60, 60, 0);
     Jugador_1.setScreenJug(960,60,3);
-    int danio;
+
+    /// Carga los sprites al jugador 1
+    Jugador_1.setSprites_Quieto(J1_K_Quieto);
+
+    Jugador_1.setSprites_Arriba(J1_AR_Pausa, J1_AR_Pie_Derecho_1, J1_AR_Pie_Derecho_2, J1_AR_Pie_Izquierdo_1, J1_AR_Pie_Izquierdo_2);
+
+    Jugador_1.setSprites_Derecha(J1_D_Pausa, J1_D_Pie_Derecho_1, J1_D_Pie_Derecho_2, J1_D_Pie_Izquierdo_1, J1_D_Pie_Izquierdo_2);
+
+    Jugador_1.setSprites_Abajo(J1_AB_Pausa, J1_AB_Pie_Derecho_1, J1_AB_Pie_Derecho_2, J1_AB_Pie_Izquierdo_1, J1_AB_Pie_Izquierdo_2);
+
+    Jugador_1.setSprites_Izquierda(J1_I_Pausa, J1_I_Pie_Derecho_1, J1_I_Pie_Derecho_2, J1_I_Pie_Izquierdo_1, J1_I_Pie_Izquierdo_2);
+
     ///JUGADOR2
-    Jugador Jugador_2(780, 540, 0);
+    Jugador Jugador_2(780, 540, 1);
     Jugador_2.setScreenJug(960, 300, 3);
+
+    /// Carga los sprites al jugador 2
+    Jugador_2.setSprites_Quieto(J2_K_Quieto);
+
+    Jugador_2.setSprites_Arriba(J2_AR_Pausa, J2_AR_Pie_Derecho_1, J2_AR_Pie_Derecho_2, J2_AR_Pie_Izquierdo_1, J2_AR_Pie_Izquierdo_2);
+
+    Jugador_2.setSprites_Derecha(J2_D_Pausa, J2_D_Pie_Derecho_1, J2_D_Pie_Derecho_2, J2_D_Pie_Izquierdo_1, J2_D_Pie_Izquierdo_2);
+
+    Jugador_2.setSprites_Abajo(J2_AB_Pausa, J2_AB_Pie_Derecho_1, J2_AB_Pie_Derecho_2, J2_AB_Pie_Izquierdo_1, J2_AB_Pie_Izquierdo_2);
+
+    Jugador_2.setSprites_Izquierda(J2_I_Pausa, J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2);
+
     /// VECTOR JUGADORES
     int SpawnBombas[2][2]= {0};
 
@@ -811,7 +1046,6 @@ void FuncionJuego()
                 {
                     if((Keyboard::isKeyPressed(Keyboard::A)))
                     {
-
                         Jugador_2.moverIzquierda(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
                         Jugador_2.setDirY(0);
                         Jugador_2.setDirX(-1);
