@@ -22,6 +22,9 @@ protected:
     int DireccionX;
     int DireccionY;
 
+    /// SOLUCION BUGG SPRITE
+    Texture I_Pause_J2;
+
     /// Sprites Quito
     Sprite K_Quieto;
 
@@ -98,9 +101,24 @@ public: ///METODOS
         AB_Pie_Izquierdo_2.setTexture(Izquierda_2);
     }
 
-    void setSprites_Izquierda(Texture &Pausa,Texture &Derecha_1,Texture &Derecha_2,Texture &Izquierda_1,Texture &Izquierda_2)
+    void setSprites_Izquierda(int J, Texture &Pausa,Texture &Derecha_1,Texture &Derecha_2,Texture &Izquierda_1,Texture &Izquierda_2)
     {
-        I_Pausa.setTexture(Pausa);
+        if(J==1)
+        {
+            if(!I_Pause_J2.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pausa.png"))
+            {
+                exit(123123);
+            }
+            I_Pausa.setTexture(I_Pause_J2);
+            /*
+            I_Pausa.setTexture(Pausa);
+            I_Pausa.setColor(Color(100,100,100));
+            */
+        }
+        else
+        {
+            I_Pausa.setTexture(Pausa);
+        }
         I_Pie_Derecho_1.setTexture(Derecha_1);
         I_Pie_Derecho_2.setTexture(Derecha_2);
         I_Pie_Izquierdo_1.setTexture(Izquierda_1);

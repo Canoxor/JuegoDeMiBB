@@ -242,7 +242,7 @@ void FuncionJuego()
     }
 
     /// Texture Izquierda
-    Texture J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2, J2_I_Pausa;
+    Texture J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2;
 
     if(!J2_I_Pie_Derecho_1.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Derecho_1.png"))
     {
@@ -260,7 +260,9 @@ void FuncionJuego()
     {
         exit(209);
     }
-    if(!J2_I_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pausa.png"))
+    /// ERROR NO ENTIENDO POR QUE
+    Texture J2_I_Pausa;
+    if(!J2_I_Pausa.loadFromFile("imagen/Personajes/Jugador_2/Izquierda/Jug2_Pie_Izquierdo_2.png"))
     {
         exit(210);
     }
@@ -326,7 +328,7 @@ void FuncionJuego()
 
     Jugador_1.setSprites_Abajo(J1_AB_Pausa, J1_AB_Pie_Derecho_1, J1_AB_Pie_Derecho_2, J1_AB_Pie_Izquierdo_1, J1_AB_Pie_Izquierdo_2);
 
-    Jugador_1.setSprites_Izquierda(J1_I_Pausa, J1_I_Pie_Derecho_1, J1_I_Pie_Derecho_2, J1_I_Pie_Izquierdo_1, J1_I_Pie_Izquierdo_2);
+    Jugador_1.setSprites_Izquierda(0, J1_I_Pausa, J1_I_Pie_Derecho_1, J1_I_Pie_Derecho_2, J1_I_Pie_Izquierdo_1, J1_I_Pie_Izquierdo_2);
 
     ///JUGADOR2
     Jugador Jugador_2(780, 540, 1);
@@ -341,7 +343,7 @@ void FuncionJuego()
 
     Jugador_2.setSprites_Abajo(J2_AB_Pausa, J2_AB_Pie_Derecho_1, J2_AB_Pie_Derecho_2, J2_AB_Pie_Izquierdo_1, J2_AB_Pie_Izquierdo_2);
 
-    Jugador_2.setSprites_Izquierda(J2_I_Pausa, J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2);
+    Jugador_2.setSprites_Izquierda(1, J1_I_Pausa, J2_I_Pie_Derecho_1, J2_I_Pie_Derecho_2, J2_I_Pie_Izquierdo_1, J2_I_Pie_Izquierdo_2);
 
     /// VECTOR JUGADORES
     int SpawnBombas[2][2]= {0};

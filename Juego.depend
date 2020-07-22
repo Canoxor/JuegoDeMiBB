@@ -2258,12 +2258,12 @@
 1594923098 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\bomba.h
 	<SFML/Graphics.hpp>
 
-1595455430 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
+1595459343 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
 	<SFML/Graphics.hpp>
 	"bomba.h"
 	"InterfazJug.h"
 
-1595455443 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
+1595459139 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594922384 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\bomba.cpp
@@ -2279,7 +2279,7 @@
 
 1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\item.h
 
-1595455417 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\jugador.cpp
+1595458868 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\jugador.cpp
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
