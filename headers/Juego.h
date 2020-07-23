@@ -596,60 +596,68 @@ void FuncionJuego()
 
                 ///TECLADO  JUGADOR 1 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                /// ABAJO
-                if ((Keyboard::isKeyPressed(Keyboard::Down)&&(Keyboard::isKeyPressed(Keyboard::Left)) ||  (Keyboard::isKeyPressed(Keyboard::Right)) ))
+                if((Keyboard::isKeyPressed(Keyboard::Down)||Keyboard::isKeyPressed(Keyboard::Up)||Keyboard::isKeyPressed(Keyboard::Right)||Keyboard::isKeyPressed(Keyboard::Left)))
                 {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::Down)))
+                    /// ABAJO
+                    if ((Keyboard::isKeyPressed(Keyboard::Down)&&(Keyboard::isKeyPressed(Keyboard::Left)) ||  (Keyboard::isKeyPressed(Keyboard::Right)) ))
                     {
-                        Jugador_1.moverAbajo(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
-                        Jugador_1.setDirY(1);
-                        Jugador_1.setDirX(0);
                     }
-                }
-                /// ARRIBA
-                if ((Keyboard::isKeyPressed(Keyboard::Up)&&(Keyboard::isKeyPressed(Keyboard::Left)) ||  (Keyboard::isKeyPressed(Keyboard::Right)) ))
-                {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::Up)))
+                    else
                     {
-                        Jugador_1.moverArriba(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
-                        Jugador_1.setDirY(-1);
-                        Jugador_1.setDirX(0);
+                        if((Keyboard::isKeyPressed(Keyboard::Down)))
+                        {
+                            Jugador_1.moverAbajo(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
+                            Jugador_1.setDirY(1);
+                            Jugador_1.setDirX(0);
+                        }
                     }
-                }
-                ///IZQUIERDA
-                if ((Keyboard::isKeyPressed(Keyboard::Left)&&(Keyboard::isKeyPressed(Keyboard::Up)) ||  (Keyboard::isKeyPressed(Keyboard::Down)) ))
-                {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::Left)))
+                    /// ARRIBA
+                    if ((Keyboard::isKeyPressed(Keyboard::Up)&&(Keyboard::isKeyPressed(Keyboard::Left)) ||  (Keyboard::isKeyPressed(Keyboard::Right)) ))
                     {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::Up)))
+                        {
+                            Jugador_1.moverArriba(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
+                            Jugador_1.setDirY(-1);
+                            Jugador_1.setDirX(0);
+                        }
+                    }
+                    ///IZQUIERDA
+                    if ((Keyboard::isKeyPressed(Keyboard::Left)&&(Keyboard::isKeyPressed(Keyboard::Up)) ||  (Keyboard::isKeyPressed(Keyboard::Down)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::Left)))
+                        {
 
-                        Jugador_1.moverIzquierda(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
-                        Jugador_1.setDirY(0);
-                        Jugador_1.setDirX(-1);
+                            Jugador_1.moverIzquierda(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
+                            Jugador_1.setDirY(0);
+                            Jugador_1.setDirX(-1);
+                        }
                     }
-                }
-                ///DERECHA
-                if ((Keyboard::isKeyPressed(Keyboard::Right)&&(Keyboard::isKeyPressed(Keyboard::Up)) ||  (Keyboard::isKeyPressed(Keyboard::Down)) ))
-                {
+                    ///DERECHA
+                    if ((Keyboard::isKeyPressed(Keyboard::Right)&&(Keyboard::isKeyPressed(Keyboard::Up)) ||  (Keyboard::isKeyPressed(Keyboard::Down)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::Right)))
+                        {
+
+                            Jugador_1.moverDerecha(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
+                            Jugador_1.setDirY(0);
+                            Jugador_1.setDirX(1);
+                        }
+                    }
                 }
                 else
                 {
-                    if((Keyboard::isKeyPressed(Keyboard::Right)))
-                    {
-
-                        Jugador_1.moverDerecha(Jugador_1.getX(),Jugador_1.getY(), Jugador_1.getVelocidad());
-                        Jugador_1.setDirY(0);
-                        Jugador_1.setDirX(1);
-                    }
+                    Jugador_1.Quieto();
                 }
+
 /// ////////////////// BOMBA JUGADOR 1 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 // Margen de inicio
@@ -1013,58 +1021,64 @@ void FuncionJuego()
 
 /// ///////////////////  TECLADO  JUGADOR 2 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-                /// ABAJO
-                if ((Keyboard::isKeyPressed(Keyboard::S)&&(Keyboard::isKeyPressed(Keyboard::A)) ||  (Keyboard::isKeyPressed(Keyboard::D)) ))
+                if((Keyboard::isKeyPressed(Keyboard::A)||Keyboard::isKeyPressed(Keyboard::S)||Keyboard::isKeyPressed(Keyboard::D)||Keyboard::isKeyPressed(Keyboard::W)))
                 {
+                    /// ABAJO
+                    if ((Keyboard::isKeyPressed(Keyboard::S)&&(Keyboard::isKeyPressed(Keyboard::A)) ||  (Keyboard::isKeyPressed(Keyboard::D)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::S)))
+                        {
+                            Jugador_2.moverAbajo(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
+                            Jugador_2.setDirY(1);
+                            Jugador_2.setDirX(0);
+                        }
+                    }
+                    /// ARRIBA
+                    if ((Keyboard::isKeyPressed(Keyboard::W)&&(Keyboard::isKeyPressed(Keyboard::A)) ||  (Keyboard::isKeyPressed(Keyboard::D)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::W)))
+                        {
+                            Jugador_2.moverArriba(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
+                            Jugador_2.setDirY(-1);
+                            Jugador_2.setDirX(0);
+                        }
+                    }
+                    ///IZQUIERDA
+                    if ((Keyboard::isKeyPressed(Keyboard::A)&&(Keyboard::isKeyPressed(Keyboard::W)) ||  (Keyboard::isKeyPressed(Keyboard::S)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::A)))
+                        {
+                            Jugador_2.moverIzquierda(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
+                            Jugador_2.setDirY(0);
+                            Jugador_2.setDirX(-1);
+                        }
+                    }
+                    ///DERECHA
+                    if ((Keyboard::isKeyPressed(Keyboard::D)&&(Keyboard::isKeyPressed(Keyboard::W)) ||  (Keyboard::isKeyPressed(Keyboard::S)) ))
+                    {
+                    }
+                    else
+                    {
+                        if((Keyboard::isKeyPressed(Keyboard::D)))
+                        {
+                            Jugador_2.moverDerecha(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
+                            Jugador_2.setDirY(0);
+                            Jugador_2.setDirX(1);
+                        }
+                    }
                 }
                 else
                 {
-                    if((Keyboard::isKeyPressed(Keyboard::S)))
-                    {
-                        Jugador_2.moverAbajo(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
-                        Jugador_2.setDirY(1);
-                        Jugador_2.setDirX(0);
-                    }
-                }
-                /// ARRIBA
-                if ((Keyboard::isKeyPressed(Keyboard::W)&&(Keyboard::isKeyPressed(Keyboard::A)) ||  (Keyboard::isKeyPressed(Keyboard::D)) ))
-                {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::W)))
-                    {
-                        Jugador_2.moverArriba(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
-                        Jugador_2.setDirY(-1);
-                        Jugador_2.setDirX(0);
-                    }
-                }
-                ///IZQUIERDA
-                if ((Keyboard::isKeyPressed(Keyboard::A)&&(Keyboard::isKeyPressed(Keyboard::W)) ||  (Keyboard::isKeyPressed(Keyboard::S)) ))
-                {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::A)))
-                    {
-                        Jugador_2.moverIzquierda(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
-                        Jugador_2.setDirY(0);
-                        Jugador_2.setDirX(-1);
-                    }
-                }
-                ///DERECHA
-                if ((Keyboard::isKeyPressed(Keyboard::D)&&(Keyboard::isKeyPressed(Keyboard::W)) ||  (Keyboard::isKeyPressed(Keyboard::S)) ))
-                {
-                }
-                else
-                {
-                    if((Keyboard::isKeyPressed(Keyboard::D)))
-                    {
-                        Jugador_2.moverDerecha(Jugador_2.getX(),Jugador_2.getY(), Jugador_2.getVelocidad());
-                        Jugador_2.setDirY(0);
-                        Jugador_2.setDirX(1);
-                    }
+                    Jugador_2.Quieto();
                 }
 
 /// ////////////////// BOMBA JUGADOR 2 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

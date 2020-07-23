@@ -73,6 +73,15 @@ public: ///METODOS
 
     virtual ~Jugador();
 
+    void Quieto()
+    {
+        Orientacion = 0;
+        Estado_Animacion_Abajo = 0;
+        Estado_Animacion_Arriba = 0;
+        Estado_Animacion_Derecha = 0;
+        Estado_Animacion_Izquierda = 0;
+    }
+
     void setSprites_Arriba(Texture &Pausa,Texture &Derecha_1,Texture &Derecha_2,Texture &Izquierda_1,Texture &Izquierda_2)
     {
         /// Se cargan los sprites para el jugador
