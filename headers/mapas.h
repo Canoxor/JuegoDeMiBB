@@ -106,10 +106,10 @@ bool crearMapa2() ///aca creamos el archivo en WB
     for(int z=0; z< 20; z++)
     {
         randX[z]=(rand() % 13) +1;
-        cout<<randX[z]<<endl;
+        //cout<<randX[z]<<endl;
 
         randY[z]=(rand() % 9) +1;
-        cout<<randY[z]<<endl;
+        //cout<<randY[z]<<endl;
 
 
     }

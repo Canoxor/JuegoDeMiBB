@@ -52,12 +52,14 @@
 		<Unit filename="headers/Juego.h" />
 		<Unit filename="headers/Partida.h" />
 		<Unit filename="headers/Sonido.h" />
+		<Unit filename="headers/funcGuardar.h" />
 		<Unit filename="headers/mapas.h" />
 		<Unit filename="include/InterfazJug.h" />
 		<Unit filename="include/Jugador.h" />
 		<Unit filename="include/bomba.h" />
 		<Unit filename="include/cubo.h" />
 		<Unit filename="include/cuboR.h" />
+		<Unit filename="include/guardar.h" />
 		<Unit filename="include/item.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/InterfazJug.cpp" />
@@ -65,6 +67,7 @@
 		<Unit filename="src/bomba.cpp" />
 		<Unit filename="src/cubo.cpp" />
 		<Unit filename="src/cuboR.cpp" />
+		<Unit filename="src/guardar.cpp" />
 		<Unit filename="src/item.cpp" />
 		<Extensions>
 			<code_completion />

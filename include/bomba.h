@@ -26,10 +26,6 @@ public:
     bomba(Texture&,Texture&);
     virtual ~bomba();
 
-    ///DANIO
-    bool hacerDanio();
-    void AreaDelDanio();
-
     ///APARECER BOMBA
     void Aparecer(float,float);
     void despawn();

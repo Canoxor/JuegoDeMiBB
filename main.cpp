@@ -14,15 +14,15 @@ using namespace sf;
 #include "bomba.h"
 #include "Jugador.h"
 #include "InterfazJug.h"
+#include "guardar.h"
 #include "headers/Partida.h"
 #include "headers/mapas.h"
 #include "headers/Sonido.h"
+#include "headers/funcGuardar.h"
 #include "headers/Juego.h"
-
 
 int main()
 {
-
     FuncionJuego();
 
     return 0;

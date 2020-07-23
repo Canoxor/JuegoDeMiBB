@@ -9,8 +9,9 @@ void FuncionJuego()
 {
 
     RenderWindow window(VideoMode(1260, 660), "DESTROY_IT");
-    bool Mouse_Habilitado = true;
+    bool Teclado_Habilitar = true;
     bool BuggEnter = true;
+    bool BuggEnter_2 = true;
 
     /// SONIDO
 
@@ -103,7 +104,7 @@ void FuncionJuego()
 
     // Sprites para el JUGADOR 1
 
-    /// Texture Quito
+    /// Texture Quieto
     Texture J1_K_Quieto;
 
     if(!J1_K_Quieto.loadFromFile("imagen/Personajes/Jugador_1/Jug1_Pausa.png"))
@@ -363,7 +364,7 @@ void FuncionJuego()
         ///Si hay un error salimos
         exit(1);
     }
-    if(!Bomba_Azul_T.loadFromFile("imagen/Bombas/Bomba_Roja.png"))
+    if(!Bomba_Azul_T.loadFromFile("imagen/Bombas/Bomba_Azul.png"))
     {
         ///Si hay un error salimos
         exit(1);
@@ -408,25 +409,14 @@ void FuncionJuego()
     cuboR vcuboR[9][13];
     int randomNumber;
 
-    srand((unsigned) time(0));
-
-    switch(randomNumber)
-    {
     ///archivo MAPA 1
-    case 1:
-        crearMapa1();
-        break;
+    crearMapa1();
 
     ///archivo MAPA 2
-    case 2:
-        crearMapa2();
-        break;
+    crearMapa2();
 
     ///archivo MAPA 3
-    case 3:
-        crearMapa3();
-        break;
-    }
+    crearMapa3();
 
 
     /*
@@ -487,22 +477,21 @@ void FuncionJuego()
 
                 if (event.type == Event::KeyPressed)
                 {
-                    if(Mouse_Habilitado)
+                    if(Teclado_Habilitar)
                     {
+                        Teclado_Habilitar = false;
+
                         if((Keyboard::isKeyPressed(Keyboard::Down)))
                         {
-                            if(Mouse_Habilitado)
-                            {
-                                Sonido_MenuPrincipal.encender();
+                            Sonido_MenuPrincipal.encender();
 
-                                if(valorSeleccionar == 3)
-                                {
-                                    valorSeleccionar = 1;
-                                }
-                                else
-                                {
-                                    valorSeleccionar++;
-                                }
+                            if(valorSeleccionar == 3)
+                            {
+                                valorSeleccionar = 1;
+                            }
+                            else
+                            {
+                                valorSeleccionar++;
                             }
                         }
 
@@ -519,12 +508,11 @@ void FuncionJuego()
                                 valorSeleccionar--;
                             }
                         }
-                        Mouse_Habilitado = false;
                     }
                 }
                 else
                 {
-                    Mouse_Habilitado = true;
+                    Teclado_Habilitar = true;
                 }
 
                 ///Borra
@@ -594,6 +582,52 @@ void FuncionJuego()
                     Musica_Juego.reproducir();
                 }
 
+                ///GUARDAR PARTIDA///
+
+                if ((Keyboard::isKeyPressed(Keyboard::G)))
+                {
+                    guardarPartida(Jugador_1.getX(), Jugador_1.getY(), Jugador_2.getX(), Jugador_2.getY(), Jugador_1.GetVida(), Jugador_2.GetVida(), vcuboR );
+                }
+
+
+
+                if ((Keyboard::isKeyPressed(Keyboard::C))){
+
+                        guardar cargar;
+                        cuboR cuboPro;
+
+                    cargar=cargarPartida();
+
+                    Jugador_1.setPos(cargar.getPosXj1(), cargar.getPosYj1());
+                    Jugador_1.setVida(cargar.getVidaj1());
+                    Jugador_1.setScreenJug(960, 60, Jugador_1.GetVida());///actualiza la interfaz
+
+                    Jugador_2.setPos(cargar.getPosXj2(), cargar.getPosYj2());
+                    Jugador_2.setVida(cargar.getVidaj2());
+                       Jugador_2.setScreenJug(960, 300, Jugador_2.GetVida());///actualiza la interfaz
+
+
+
+
+
+                    for( y=1; y<10; y++){
+
+                            for( x=1; x<14; x++){
+
+                        cuboPro=cargar.getCubos(x-1, y-1);/// asignamos en el obj provicional la posicion de UN solo cubo segun el for
+
+                        vcuboR[y-1][x-1].setPos(cuboPro.getPosX(), cuboPro.getPosY());
+                         vcuboR[y-1][x-1].setEstado(cuboPro.getEstado());
+
+
+
+                    }
+                    }
+
+
+
+                }
+
                 ///TECLADO  JUGADOR 1 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 if((Keyboard::isKeyPressed(Keyboard::Down)||Keyboard::isKeyPressed(Keyboard::Up)||Keyboard::isKeyPressed(Keyboard::Right)||Keyboard::isKeyPressed(Keyboard::Left)))
@@ -661,35 +695,27 @@ void FuncionJuego()
 /// ////////////////// BOMBA JUGADOR 1 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 // Margen de inicio
-                if(Jugador_1.getTiempo() > 2)
+                if(Jugador_1.getTiempo() > 1.5)
                 {
                     BuggEnter = false;
                 }
 
                 if((Keyboard::isKeyPressed(Keyboard::Enter)))
                 {
-                    if(Mouse_Habilitado)
+                    if(BuggEnter == false)
                     {
-                        Mouse_Habilitado = false;
-
-                        if(BuggEnter == false)
+                        if(Bomba_J1.getmostrar()==false)
                         {
-                            if(Bomba_J1.getmostrar()==false)
-                            {
-                                //Sonido_ColocarBomba.encender();
+                            //Sonido_ColocarBomba.encender();
 
-                                VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
-                                Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
-                                Bomba_J1.setmostrar(true);
-                                Bomba_J1.setTiempo();
-                            }
-                            else
-                            {
-                                Mouse_Habilitado = true;
-                            }
+                            VerificarPosicion(SpawnBombas,Jugador_1.getX(),Jugador_1.getY(),VecX,VecY);
+                            Bomba_J1.Aparecer(VecX[SpawnBombas[0][0]]-29.5,VecY[SpawnBombas[1][0]]-29.5);
+                            Bomba_J1.setmostrar(true);
+                            Bomba_J1.setTiempo();
                         }
                     }
                 }
+
                 if(Bomba_J1.getTiempo()>=2)
                 {
                     Bomba_J1.setEstado(1);
@@ -738,9 +764,6 @@ void FuncionJuego()
 
                         if(PixelPerfectTest(Jugador_1.getSprite(), vcubos[y][x].getSprite()))
                         {
-
-
-
                             switch(Jugador_1.getDirX())
                             {
 
@@ -924,13 +947,13 @@ void FuncionJuego()
                 {
                     if(Collision::PixelPerfectTest(Bomba_J1.getSpriteBomba(), Jugador_1.getSprite()))
                     {
-                        if(Jugador_1.getTiempo()>=3 )
+                        if(Jugador_1.getTiempo() >= 2)
                         {
                             Jugador_1.Daniar();
                             Jugador_1.setTiempo();
                             Jugador_1.setScreenJug(960, 60, Jugador_1.GetVida());
 
-                            if(Jugador_1.GetVida()==0)
+                            if(Jugador_1.GetVida() == 0)
                             {
                                 /// Gana el jugador 2
                                 Musica_Juego.parar();
@@ -948,7 +971,7 @@ void FuncionJuego()
                 {
                     if(Collision::PixelPerfectTest(Bomba_J2.getSpriteBomba(), Jugador_1.getSprite()))
                     {
-                        if(Jugador_1.getTiempo()>=3 )
+                        if(Jugador_1.getTiempo()>=2 )
                         {
                             Jugador_1.Daniar();
                             Jugador_1.setTiempo();
@@ -973,7 +996,7 @@ void FuncionJuego()
                 {
                     if(Collision::PixelPerfectTest(Bomba_J1.getSpriteBomba(), Jugador_2.getSprite()))
                     {
-                        if(Jugador_2.getTiempo()>=3 )
+                        if(Jugador_2.getTiempo()>=2 )
                         {
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
@@ -998,7 +1021,7 @@ void FuncionJuego()
                 {
                     if(Collision::PixelPerfectTest(Bomba_J2.getSpriteBomba(), Jugador_2.getSprite()))
                     {
-                        if(Jugador_2.getTiempo()>=3 )
+                        if(Jugador_2.getTiempo()>=2 )
                         {
                             Jugador_2.Daniar();
                             //cout<<endl<<endl<<" VIDA JUGADOR 2 ="<<Jugador_2.GetVida()<<endl<<endl;
@@ -1083,14 +1106,11 @@ void FuncionJuego()
 
 /// ////////////////// BOMBA JUGADOR 2 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                if(Mouse_Habilitado)
+                if(Jugador_2.getTiempo() > 1.5)
                 {
-                    Mouse_Habilitado = false;
+                    BuggEnter_2 = false;
                 }
-                else
-                {
-                    Mouse_Habilitado = true;
-                }
+
                 if((Keyboard::isKeyPressed(Keyboard::Space)))
                 {
                     if(Bomba_J2.getmostrar()==false)
@@ -1265,8 +1285,8 @@ void FuncionJuego()
 
                 ///muestran el tiempo
                 tiempo1=Bomba_J1.getTiempo();
-                cout<<tiempo1<<endl;
-                cout<<endl;
+                //cout<<tiempo1<<endl;
+                //cout<<endl;
 
                 variable=Bomba_J2.getTiempo();
 

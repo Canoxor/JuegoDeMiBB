@@ -1821,7 +1821,7 @@
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 
-1595470267 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
+1595477663 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<iostream>
@@ -1834,9 +1834,11 @@
 	"bomba.h"
 	"Jugador.h"
 	"InterfazJug.h"
+	"guardar.h"
 	"headers/Partida.h"
 	"headers/mapas.h"
 	"headers/Sonido.h"
+	"headers/funcGuardar.h"
 	"headers/Juego.h"
 
 1594786799 c:\users\nicol\desktop\juegodemibb\juegodemibb\sfml\include\sfml\graphics.hpp
@@ -2255,15 +2257,15 @@
 1594838636 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\cubo.h
 	<SFML/Graphics.hpp>
 
-1594923098 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\bomba.h
+1595475517 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\bomba.h
 	<SFML/Graphics.hpp>
 
-1595470602 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
+1595475357 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\jugador.h
 	<SFML/Graphics.hpp>
 	"bomba.h"
 	"InterfazJug.h"
 
-1595470674 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
+1595477663 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\juego.h
 	<SFML/Graphics.hpp>
 
 1594922384 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\bomba.cpp
@@ -2789,7 +2791,7 @@
 	"Jugador.h"
 	"InterfazJug.h"
 
-1595309090 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\mapas.h
+1595472474 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\mapas.h
 	"cuboR.h"
 	"ctime"
 
@@ -3621,4 +3623,15 @@
 	<SFML/Graphics.hpp>
 	"Jugador.h"
 	"InterfazJug.h"
+
+1595470314 c:\users\nicol\desktop\juegodemibb\juegodemibb\include\guardar.h
+	<SFML/Graphics.hpp>
+	"cuboR.h"
+
+1595471753 c:\users\nicol\desktop\juegodemibb\juegodemibb\headers\funcguardar.h
+	"guardar.h"
+	"cuboR.h"
+
+1595470316 source:c:\users\nicol\desktop\juegodemibb\juegodemibb\src\guardar.cpp
+	"guardar.h"
 

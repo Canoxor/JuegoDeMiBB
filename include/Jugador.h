@@ -7,8 +7,6 @@ using namespace sf;
 #include "bomba.h"
 #include "InterfazJug.h"
 
-enum Direcciones {Ninguna,Abajo,Arriba,Izquierda,Derecha};
-
 class Jugador
 {
 
@@ -63,11 +61,7 @@ protected:
 
     InterfazJug screenJug;
 
-    Direcciones ultimatecla;
-
 public: ///METODOS
-
-    Direcciones direccion;
 
     Jugador(float a, float b, int c);
 
